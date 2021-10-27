@@ -6,10 +6,11 @@
     height: $height;
 }
 .signup{
-    @include align(flex,center,column, 50vh);
+    @include align(flex,center,column, 47vh);
+    margin-top: 1.2rem;
 }
 .signup_inputs{
-    @include align(flex,space-evenly,column, 60vh);
+    @include align(flex,space-evenly,column, 50vh);
 }
 .button_main{
     @include align(flex,center,null,null);
@@ -25,18 +26,22 @@
 .css-1u3bzj6-MuiFormControl-root-MuiTextFiels-root {
     min-height: 5rem !important;
 }
+span.forget {
+    font-size: 0.85rem;
+    color: gray;
+}
 .buttons{   
     @include align(flex,space-evenly,null,null);
     width: 100%;
     margin-top: 18px;
 }
+.button2 > .MuiButton-label {
+    color: #000 !important;
+}
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .signup {
-        height: 38vh;        
-    }
-    .signup_inputs {
-        height: 30vh;        
+        height: 32vh;
     }
 }
 
@@ -48,18 +53,21 @@
 
 @media screen and (min-width: 360px) and (max-width: 630px){
     .signup {
-        height: 42vh;
+        height: 45vh;
     }
     .signup_inputs {
-        width: 42vw;        
+        width: 62vw;
     }
     .button_main {
-        width: 130%;
+        width: 106%;
     }
-    .MuiButton-label {
-        font-size: 0.7rem;
+}
+
+@media screen and (max-width: 340px){
+    .signup {
+        height: 65vh;
     }
-    .buttons {
-        width: 88%;
+    .signup_inputs {
+        height: 58vh;
     }
 }

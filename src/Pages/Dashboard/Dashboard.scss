@@ -56,24 +56,32 @@ $height: 58vh;
 .btn{
     cursor: pointer;
     font-weight: $font-weight;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #c0b5b5;
 }
 .btn:hover ,.btn:focus{
     color: black;
 }
 
+.css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root {
+    min-width: 210px !important;
+}
+
+.MuiFormControl-root {
+    min-height: 4rem !important;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .book_main {
         width: 38%;
-        height: 45vh;        
+        height: 40vh;        
     }
     .main_content {
         width: 46%;
-        height: 48vh;        
+        height: 42vh;
     }
     .img_main {
-        height: 46vh;        
+        height: 40vh;        
     }
 }
 
@@ -88,20 +96,20 @@ $height: 58vh;
 
 @media screen and (min-width: 360px) and (max-width: 630px){
     .book_main {
-        width: 40%;
-        height: 45vh;
+        display: none;
     }
     .main_content {
-        width: 50%;
-        height: 48vh;        
+        width: 90%;
+        height: 58vh;        
     }
-    .img_main > img {
-        width: 115px;
-    }   
-    .img_main {
-        height: 48vh;        
-    } 
-    .btn {
-        font-size: 1.2rem;
+}
+
+@media screen and (max-width: 340px){
+    .book_main {
+        display: none;
+    }
+    .main_content {
+        width: 90%;
+        height: 86vh;        
     }
 }

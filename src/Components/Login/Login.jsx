@@ -108,7 +108,7 @@ export default class Login extends Component {
                         <Button className="button" variant="contained" color="primary">
                             Facebook
                         </Button>
-                        <Button className="button" variant="contained" color="red">
+                        <Button className="button2" variant="contained" color="red">
                             Google
                         </Button>
                     </div>
