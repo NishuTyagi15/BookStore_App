@@ -6,7 +6,7 @@
     height: $height;
 }
 .signup{
-    @include align(flex,center,column, 100vh);
+    @include align(flex,center,column, 45vh);
 }
 .signup_inputs{
     @include align(flex,space-evenly,column, 40vh);
@@ -16,6 +16,9 @@
     width: 100%;
 }
 .button1{
-    width: 16%;
+    width: 65%;
     background-color: #A03037 !important;
+}
+.MuiButton-label {
+    color: #fff;
 }
