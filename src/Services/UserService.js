@@ -10,8 +10,12 @@ const headerconfig = {
 };
 
 class UserServices {
-    signUp(data) {
+    registration(data) {
         let response = obj.postMeth(`${baseurl}registration`, data, headerconfig);
+        return response;
+    }
+    login(data) {
+        let response = obj.postMeth(`${baseurl}login`, data, headerconfig);
         return response;
     }
 }

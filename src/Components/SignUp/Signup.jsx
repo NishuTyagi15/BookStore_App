@@ -55,13 +55,13 @@ class Signup extends Component {
                 "phone": this.state.mobile,
             }
             console.log(signupObj);
-            obj.signUp(signupObj).then((response)=> {
+            obj.registration(signupObj).then((response)=> {
                 console.log(response);
                 localStorage.setItem("token", response.data.id);
-                this.setState({snackbaropen:true, snackbarmsg: "Signup Successful!"})
+                this.setState({snackbaropen:true, snackbarmsg: "Registered Successfully!"})
             }).catch((error)=>{
                 console.log(error);
-                this.setState({snackbaropen:true, snackbarmsg: "Signup Failed!"})
+                this.setState({snackbaropen:true, snackbarmsg: "Registration Failed!"})
             })
         }  else {
             this.setState({snackbaropen:true, snackbarmsg: "Please enter data!"})
