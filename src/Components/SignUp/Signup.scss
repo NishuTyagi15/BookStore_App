@@ -1,0 +1,21 @@
+@mixin  align($display,$justify-content,$direction,$height) {
+    display: flex;
+    justify-content: $justify-content;
+    flex-direction: $direction;
+    align-items: center;
+}
+.signup{
+    @include align(flex,center,column,333px);
+    height: 100vh;  
+}
+.signup_inputs{
+    @include align(flex,space-evenly,column, 292px);
+}
+.div-but-content{
+    @include align(flex,center,null,null);
+    width: 100%;
+}
+.button1{
+    width: 220px;
+    background-color: #A03037 !important;
+}
