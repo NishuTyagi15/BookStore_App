@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
+import '../SignUp/Signup.scss';
 import Button from '@material-ui/core/Button';
-import './Signup.scss';
 
-class Signup extends Component {
-    
+export default class Login extends Component {
+
     render() {
         return (
             <div className="signup_main">
                 <form className="signup">
                     <div className="signup_inputs">
-                        <TextField
-                            id="fullName"
-                            type="text"
-                            name="fName"
-                            label="Full Name"
-                            variant="outlined"
-                            size="small"
-                        />
                         <TextField
                             id="email"
                             type="text"
@@ -34,18 +26,23 @@ class Signup extends Component {
                             variant="outlined"
                             size="small"
                         />
-                        <TextField
-                            id="mobile"
-                            type="test"
-                            name="mobile"
-                            label="Mobile Number"
-                            variant="outlined"
-                            size="small"
-                        />
+                        <div className="pwd_change">
+                            <span className="forget">Forget Password?</span>
+                        </div>
                     </div>
                     <div className="button_main">
                         <Button className="button1" variant="contained">
-                            Signup
+                            Login
+                        </Button>
+                    </div>
+
+                    <span style={{ marginTop: '14px' }}>---------- OR ----------</span>
+                    <div className="buttons">
+                        <Button className="button" variant="contained" color="primary">
+                            Facebook
+                        </Button>
+                        <Button className="button" variant="contained" color="red">
+                            Google
                         </Button>
                     </div>
                 </form>
@@ -53,5 +50,3 @@ class Signup extends Component {
         );
     }
 }
-
-export default Signup;

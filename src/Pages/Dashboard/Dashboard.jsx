@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { Switch, Route, Link } from "react-router-dom";
 import Image from '../Dashboard/img1.png'
 import '../Dashboard/Dashboard.scss'
 import Signup from '../../Components/SignUp/Signup';
-import { Switch, Route, Link } from "react-router-dom";
+import Login from '../../Components/Login/Login';
 
 export class Dashboard extends Component {
     render() {
@@ -16,13 +17,16 @@ export class Dashboard extends Component {
                 </div>
                 <div className="main_content">
                     <div className="title">
-                        <span className="btn">LOGIN </span>
+                        <Link style={{textDecoration:"none",color:"black"}} to={`/`} >
+                            <span className="btn">LOGIN </span>
+                        </Link>
                         <Link style={{textDecoration:"none",color:"black"}} to={`/SignUp`} >
                             <span className="btn">SIGNUP </span>
                         </Link>
                     </div>
                     <div className="box">
                         <Switch>
+                            <Route exact path="/" component={Login} />
                             <Route exact path="/Signup" component={Signup} />
                         </Switch>
                     </div>
