@@ -3,19 +3,19 @@
     justify-content: $justify-content;
     flex-direction: $direction;
     align-items: center;
+    height: $height;
 }
 .signup{
-    @include align(flex,center,column,333px);
-    height: 100vh;  
+    @include align(flex,center,column, 100vh);
 }
 .signup_inputs{
-    @include align(flex,space-evenly,column, 292px);
+    @include align(flex,space-evenly,column, 40vh);
 }
-.div-but-content{
+.button_main{
     @include align(flex,center,null,null);
     width: 100%;
 }
 .button1{
-    width: 220px;
+    width: 16%;
     background-color: #A03037 !important;
 }
