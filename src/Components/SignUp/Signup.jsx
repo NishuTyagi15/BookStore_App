@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import '../SignUp/Signup.scss';
+import UserServices from '../../Services/UserService';
+import { Snackbar, IconButton } from '@mui/material';
+
+const obj = new UserServices();
 
 class Signup extends Component {
 
@@ -9,22 +13,27 @@ class Signup extends Component {
         super(props)
     
         this.state = {
-            name: "",
+            fname: "",
             email: "",
             password: "",
             mobile: "",
-            nameError: false,
+            fnameError: false,
             emailError: false,
             passError: false,
             mobError: false,
+            snackbaropen: false, 
+            snackbarmsg: ""
         }
-
     }
+
+    snackbarClose = (event) => {
+        this.setState({snackbaropen: false});
+    };
 
     isValidated = () => {
         let isError = false;
         const errors = this.state;
-        errors.nameError = this.state.name !=='' ? false : true;
+        errors.fnameError = this.state.fname !=='' ? false : true;
         errors.emailError = this.state.email !=='' ? false : true;
         errors.passError = this.state.password !=='' ? false : true;
         errors.mobError = this.state.mobile !=='' ? false : true;
@@ -32,13 +41,30 @@ class Signup extends Component {
         this.setState({
             ...errors
         })
-        return isError = errors.nameError || errors.emailError || errors.passError || errors.mobError
+        return isError = errors.fnameError || errors.emailError || errors.passError || errors.mobError
     }
 
     signup = () => {
         var isValid = this.isValidated();
         if(!isValid) {
             console.log("Validation Sucessfull!");
+            let signupObj = {
+                "fullName": this.state.fname,
+                "email": this.state.email,
+                "password": this.state.password,
+                "phone": this.state.mobile,
+            }
+            console.log(signupObj);
+            obj.signUp(signupObj).then((response)=> {
+                console.log(response);
+                localStorage.setItem("token", response.data.id);
+                this.setState({snackbaropen:true, snackbarmsg: "Signup Successful!"})
+            }).catch((error)=>{
+                console.log(error);
+                this.setState({snackbaropen:true, snackbarmsg: "Signup Failed!"})
+            })
+        }  else {
+            this.setState({snackbaropen:true, snackbarmsg: "Please enter data!"})
         }
     }
 
@@ -56,13 +82,13 @@ class Signup extends Component {
                         <TextField
                             id="fullName"
                             type="text"
-                            name="fName"
+                            name="fname"
                             label="Full Name"
                             variant="outlined"
                             size="small"
-                            error={this.state.nameError}
+                            error={this.state.fnameError}
                             onChange={e => this.change(e)}
-                            helperText={this.state.nameError ? "Enter Full Name" : ''}
+                            helperText={this.state.fnameError ? "Enter Full Name" : ''}
                         />
                         <TextField
                             id="email"
@@ -104,6 +130,19 @@ class Signup extends Component {
                         </Button>
                     </div>
                 </form>
+                <Snackbar
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                    open={this.state.snackbaropen}
+                    autoHideDuration={3000}
+                    onClose={this.snackbarClose}
+
+                    message={<span id="message_id">{this.state.snackbarmsg}</span>}
+                    action={[
+                        <IconButton key="close" aria-label="Close" color="inherit" onClick={this.snackbarClose}>
+                            X
+                        </IconButton>
+                    ]}
+                />
             </div>
         );
     }

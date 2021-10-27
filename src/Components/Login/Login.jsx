@@ -14,7 +14,6 @@ export default class Login extends Component {
             emailError: false,
             passError: false,
         }
-
     }
 
     isValidated = () => {
