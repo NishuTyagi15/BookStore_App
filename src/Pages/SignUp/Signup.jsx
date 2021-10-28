@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import '../SignUp/Signup.scss';
+import './Signup.scss';
 import UserServices from '../../Services/UserService';
 import { Snackbar, IconButton } from '@mui/material';
 

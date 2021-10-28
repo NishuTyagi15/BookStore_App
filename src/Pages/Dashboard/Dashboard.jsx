@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Switch, Route, Link } from "react-router-dom";
 import Image from '../Dashboard/img1.png'
 import '../Dashboard/Dashboard.scss'
-import Signup from '../../Components/SignUp/Signup';
-import Login from '../../Components/Login/Login';
+import Signup from '../SignUp/Signup';
+import Login from '../Login/Login';
 
 export class Dashboard extends Component {
     render() {
