@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Header.scss';
+import education from './education.png';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import MenuBookTwoTone from '@material-ui/icons/MenuBookTwoTone';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
@@ -16,7 +16,7 @@ class Header extends Component {
                 <AppBar className="header_main" position="fixed">
                     <Toolbar>
                         <div className="header_title">
-                            <MenuBookTwoTone />
+                            <img src={education} alt="Book"></img>
                             <div className="text">Bookstore</div>
                         </div>
                         <div className="search">

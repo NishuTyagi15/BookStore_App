@@ -53,7 +53,7 @@ export default class Login extends Component {
                 localStorage.setItem("token", response.data.id);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Successful!"});
                 var timer  = setTimeout(function(){
-                    window.location = '/booksdisplay'
+                    window.location = '/home'
                 }, 2000);
             }).catch((error)=>{
                 console.log(error);

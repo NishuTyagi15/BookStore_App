@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 
-export class BooksDisplay extends Component {
+export class Home extends Component {
     render() {
         return (
             <div>
@@ -13,4 +13,4 @@ export class BooksDisplay extends Component {
     }
 }
 
-export default BooksDisplay
+export default Home
