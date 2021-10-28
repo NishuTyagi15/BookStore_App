@@ -90,7 +90,15 @@
 .css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
     background-color: #A03037 !important;
 }
-
+.sort {
+    position: absolute !important;
+    right: 9.5rem;
+    top: 6rem;
+    font-size: 0.7rem !important;
+    letter-spacing: 0rem !important;
+    color: #000 !important;
+    border: 1px solid grey !important;
+}
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .bookdisplay_main {
@@ -109,6 +117,9 @@
     .wish > .MuiButton-contained {
         width: 12vw;
         height: 4vh;
+    }
+    .sort{
+        right: 8rem;
     }
 }
 
@@ -149,6 +160,11 @@
     .books_main {
         min-height: 50vh;        
     }
+    .sort {
+        font-size: 0rem !important;
+        top: 4.5rem;
+        right: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 340px){
@@ -170,5 +186,10 @@
     }
     .pagination {
         margin: 2rem -1rem 2rem -1rem;        
+    }
+    .sort {
+        font-size: 0rem !important;
+        top: 4.5rem;
+        right: 1.5rem;
     }
 }
