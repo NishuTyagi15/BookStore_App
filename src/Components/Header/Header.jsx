@@ -5,8 +5,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import MenuBookTwoTone from '@material-ui/icons/MenuBookTwoTone';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import './Header.scss';
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
 

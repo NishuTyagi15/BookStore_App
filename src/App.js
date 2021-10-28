@@ -2,17 +2,17 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import Header from './Components/Header/Header';
+import BooksDisplay from './Pages/BooksDisplay/BooksDisplay';
 
 function App() {
   return (
     <div className="App">
-      {/* <Router>
+      <Router>
         <Switch>
-          <Route path="/" component={Dashboard} />
+          <Route exact path="/" component={Dashboard} />
+          <Route path="/booksdisplay" component={BooksDisplay} />
         </Switch>
-      </Router> */}
-      <Header />
+      </Router>
     </div>
   );
 }
