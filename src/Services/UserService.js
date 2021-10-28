@@ -18,6 +18,10 @@ class UserServices {
         let response = obj.postMeth(`${baseurl}login`, data, headerconfig);
         return response;
     }
+    getAllbooks(data) {
+        let response = obj.getMeth(`${baseurl}get/book`, data, headerconfig);
+        return response;
+    }
 }
 
 export default UserServices

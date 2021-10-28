@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, Link } from "react-router-dom";
-import Image from '../Dashboard/img1.png'
-import '../Dashboard/Dashboard.scss'
+import Image from '../../Assets/img1.png';
+import '../Dashboard/Dashboard.scss';
 import Signup from '../SignUp/Signup';
 import Login from '../Login/Login';
 

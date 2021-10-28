@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import Home from './Pages/Home/Home';
+import Home from './Components/Home/Home';
 
 function App() {
   return (

@@ -1,0 +1,82 @@
+.displaybook_main{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2rem;
+}
+.books_main{
+    width: 230px;
+    min-height: 260px;
+    margin:10px;
+}
+.book_img{
+    display: flex;
+    justify-content: center;
+    background: '#F5F5F5';
+    height: 155;
+}
+.image {
+    height:155px;
+    width:130px ;
+}
+.card_text{
+    display:flex;
+    align-items:flex-start;
+    flex-direction:column;
+}
+.MuiCardActions-root{
+    align-items:flex-start !important;
+    margin-left: 1rem;
+}
+.book_title{
+    margin-left:8px;
+    font-weight:600;
+}
+.author{
+    font-size: x-small;
+    height:12px;
+    color: lightgray;
+    font-weight:600;
+}
+.price{
+    padding-top:8px;
+    font-size: 0.8rem;
+    height:12px;
+    color:black;
+    font-weight:700;
+}
+.book_buttons{
+    margin-top: 1rem;
+    display: flex;
+    width: 14rem;
+    height: 2rem;
+    justify-content: space-evenly;
+}
+.btn22 > button{
+    width: 5rem;
+    color:white !important;
+    background-color: #A03037 !important;
+}
+.book_header{
+    display: flex;
+    margin-top: 5rem;
+    margin-left: 6.3rem;
+}
+.book_header >p {
+    margin-top: 1.8rem;
+    margin-left:0.6rem;
+    font-size: 0.8rem;
+    // font-weight: 600;
+    color: lightgray;
+}
+.button2>.MuiButton-containedPrimary {
+    background-color: #A03037 !important;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
