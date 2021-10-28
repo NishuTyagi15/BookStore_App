@@ -1,0 +1,62 @@
+$color: grey;
+
+@mixin  icon($display,$direction,$jst-cont) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $jst-cont;
+}
+
+.header_main{
+    background-color: #8F2B2F !important;
+}
+.header_title{
+    @include icon(flex,row,space-around);
+    width: 130px;
+    margin-left: 127px;
+}
+.text{
+    font-size: 20px;
+    margin-top: -0.125rem;    
+}
+.search {
+    position: relative;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-right: 2px;
+    margin-left: 3rem;
+    width: 40%;
+    height: 6vh;
+}
+.searchIcon {
+    @include icon(flex,column,center);
+    color: $color;
+    padding: 0px 12px;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+}
+.input {
+    color: $color;
+    padding: 3px 0px;
+    width: 89%;
+    margin-left: 7%;
+}
+.side-header{
+    @include icon(flex,null,space-around);
+    width: 200px;
+    margin-left: 190px;
+}
+.cart_main{
+    @include icon(flex,row,null);
+    opacity: 0.8;
+}
+.cart {
+    margin-right: 0.8rem;
+}
+.css-106c1u2-MuiBadge-badge {
+    background-color: transparent !important;
+    border: 2px solid #fff !important;
+    padding: 0 0px !important;
+    height: 18px !important;
+    font-size: 0.6rem !important;
+}
