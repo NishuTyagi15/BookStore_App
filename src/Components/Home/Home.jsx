@@ -19,7 +19,11 @@ export class Home extends Component {
         }
     }
 
-    displayBook = () => {
+    componentDidMount() {
+        this.booksDisplay();
+    }
+
+    booksDisplay = () => {
         obj.getAllbooks()
             .then((response) => {
                 this.setState({
@@ -31,17 +35,13 @@ export class Home extends Component {
             });
     }
 
-    componentDidMount() {
-        this.displayBook();
-    }
-
     render() {
         return (
             <div>
                 <Header/>
-                <BooksDisplay bookarr = {this.state.bookarr} displayBook={this.displayBook}/>
+                <BooksDisplay bookarr = {this.state.bookarr} booksDisplay={this.booksDisplay}/>
                 <div className="pagination">
-                    <Stack spacing={2}>
+                    <Stack spacing={9}>
                         <Pagination count={10} shape="rounded" />
                     </Stack>
                 </div>

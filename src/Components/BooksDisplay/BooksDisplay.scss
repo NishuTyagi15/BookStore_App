@@ -1,25 +1,24 @@
-.displaybook_main{
+.bookdisplay_main{
     display: flex;
     flex-wrap: wrap;
-    padding: 40px;
     justify-content: center;
     align-items: center;
-    margin-top: -2rem;
+    margin-left: 0.5rem;
 }
 .books_main{
-    width: 230px;
-    min-height: 260px;
-    margin:10px;
+    width: 249px;
+    min-height: 56vh;
+    margin: 10px;
 }
 .book_img{
     display: flex;
     justify-content: center;
-    background: '#F5F5F5';
-    height: 155;
+    background: #F5F5F5;
+    height: 155px;
 }
 .image {
-    height:155px;
-    width:130px ;
+    height: 155px;
+    width: 120px ;
 }
 .card_text{
     display:flex;
@@ -28,20 +27,19 @@
 }
 .MuiCardActions-root{
     align-items:flex-start !important;
-    margin-left: 1rem;
 }
 .book_title{
     margin-left:8px;
     font-weight:600;
 }
 .author{
-    font-size: x-small;
+    font-size: 0.75rem;
     height:12px;
     color: lightgray;
     font-weight:600;
 }
 .price{
-    padding-top:8px;
+    margin-top: 0.8rem;
     font-size: 0.8rem;
     height:12px;
     color:black;
@@ -50,33 +48,45 @@
 .book_buttons{
     margin-top: 1rem;
     display: flex;
-    width: 14rem;
-    height: 2rem;
-    justify-content: space-evenly;
+    margin-left: 0.5rem !important;
 }
-.btn22 > button{
-    width: 5rem;
+.add > .MuiButton-contained {
     color:white !important;
     background-color: #A03037 !important;
+    margin-right: 1rem !important;
+    height: 5vh;
+    width: 9vw;
 }
+.wish > .MuiButton-contained {
+    background-color: #fff !important;
+    color: black !important;
+    border: 1px solid grey !important;
+    height: 5vh;
+    width: 7vw;
+}
+.wish > .MuiButton-label {
+    color: #000 !important;
+}
+
 .book_header{
     display: flex;
     margin-top: 5rem;
-    margin-left: 6.3rem;
+    margin-left: 9.3rem;
+}
+.book_name {
+    font-weight: 600;
 }
 .book_header >p {
     margin-top: 1.8rem;
-    margin-left:0.6rem;
+    margin-left: 0.6rem;
     font-size: 0.8rem;
-    // font-weight: 600;
     color: lightgray;
 }
-.button2>.MuiButton-containedPrimary {
-    background-color: #A03037 !important;
-}
-
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin: 2rem 2rem 2rem 2rem;
+}
+.css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #A03037 !important;
 }

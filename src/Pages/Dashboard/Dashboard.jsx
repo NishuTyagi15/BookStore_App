@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, Link } from "react-router-dom";
-import Image from '../../Assets/img1.png';
-import '../Dashboard/Dashboard.scss';
+import Image from '../../Assets/img1.png'
+import '../Dashboard/Dashboard.scss'
 import Signup from '../SignUp/Signup';
 import Login from '../Login/Login';
 
@@ -44,14 +44,15 @@ export class Dashboard extends Component {
                             <span style={{color:this.state.open?'black':'grey', textDecoration:this.state.open?'underline': 'none', textDecorationColor:this.state.open?'maroon':'white'}}
                                 onClick={this.login} className="btn active1">LOGIN </span>
                         </Link>
-                        <Link className="link" style={{color:this.state.opensign ? 'black' : 'grey'}} to={`/SignUp`} >
-                            <span style={{color:this.state.opensign ? 'black' : 'grey', textDecoration:this.state.opensign?'underline': 'none', textDecorationColor:this.state.opensign?'maroon':'white'}} onClick={this.signUp} className="btn active2">SIGNUP </span>
+                        <Link className="link" style={{color:this.state.opensign ? 'black' : 'grey'}} to={`/signup`} >
+                            <span style={{color:this.state.opensign ? 'black' : 'grey', textDecoration:this.state.opensign?'underline': 'none', textDecorationColor:this.state.opensign?'maroon':'white'}} 
+                                onClick={this.signUp} className="btn active2">SIGNUP </span>
                         </Link>
                     </div>
                     <div className="box">
                         <Switch>
                             <Route exact path="/" component={Login} />
-                            <Route exact path="/Signup" component={Signup} />
+                            <Route exact path="/signup" component={Signup} />
                         </Switch>
                     </div>
                 </div>

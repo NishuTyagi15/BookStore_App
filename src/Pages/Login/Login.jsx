@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../SignUp/Signup.scss';
 import TextField from '@material-ui/core/TextField';
+import '../SignUp/Signup.scss';
 import Button from '@material-ui/core/Button';
 import UserServices from '../../Services/UserService';
 import { Snackbar, IconButton } from '@mui/material';
@@ -51,16 +51,16 @@ export default class Login extends Component {
             obj.login(signinObj).then((response)=> {
                 console.log(response);
                 localStorage.setItem("token", response.data.id);
-                this.setState({snackbaropen:true, snackbarmsg: "Login Successful!"});
+                this.setState({snackbaropen:true, snackbarmsg: "Login Successful!"})
                 var timer  = setTimeout(function(){
                     window.location = '/home'
                 }, 2000);
             }).catch((error)=>{
                 console.log(error);
-                this.setState({snackbaropen:true, snackbarmsg: "Login Failed!"});
+                this.setState({snackbaropen:true, snackbarmsg: "Login Failed!"})
             })
         }  else {
-            this.setState({snackbaropen:true, snackbarmsg: "Please enter data!"});
+            this.setState({snackbaropen:true, snackbarmsg: "Please enter data!"})
         }
     }
 
@@ -109,9 +109,11 @@ export default class Login extends Component {
 
                     <span className="or">---------- OR ----------</span>
                     <div className="buttons">
-                        <Button className="button2" variant="contained" color="primary">
-                            Facebook
-                        </Button>
+                        <div className="fb">
+                            <Button className="button2" variant="contained" color="primary">
+                                Facebook
+                            </Button>
+                        </div>
                         <Button className="button3" variant="contained" color="red">
                             Google
                         </Button>
