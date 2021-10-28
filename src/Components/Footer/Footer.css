@@ -11,3 +11,22 @@
     font-size: 0.8rem;
     margin-left: 8rem;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .footer_title {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .footer_title {
+        margin-left: 0rem;        
+    }
+}
+
+@media screen and (max-width: 340px){
+    .footer_title {
+        font-size: 0.7rem;
+        margin-left: 0rem;        
+    }
+}

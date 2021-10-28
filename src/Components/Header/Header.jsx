@@ -28,7 +28,7 @@ class Header extends Component {
                                 className="input"
                             />
                         </div>
-                        <div className="side-header">
+                        <div className="side_header">
                             <div className="cart_main">
                                 <span className="cart">Cart</span>
                                 <Badge badgeContent={1} 

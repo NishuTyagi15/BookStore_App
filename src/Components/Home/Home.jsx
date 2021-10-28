@@ -41,8 +41,8 @@ export class Home extends Component {
                 <Header/>
                 <BooksDisplay bookarr = {this.state.bookarr} booksDisplay={this.booksDisplay}/>
                 <div className="pagination">
-                    <Stack spacing={9}>
-                        <Pagination count={10} shape="rounded" />
+                    <Stack spacing={2}>
+                        <Pagination count={18} shape="rounded" />
                     </Stack>
                 </div>
                 <Footer/>

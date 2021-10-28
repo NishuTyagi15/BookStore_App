@@ -85,8 +85,90 @@
 .pagination {
     display: flex;
     justify-content: center;
-    margin: 2rem 2rem 2rem 2rem;
+    margin: 2rem 0rem 2rem 0rem;
 }
 .css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
     background-color: #A03037 !important;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .bookdisplay_main {
+        margin-left: 0rem;        
+    }
+    .book_header {
+        margin-left: 7.7rem;        
+    }
+    .books_main {
+        min-height: 38vh;        
+    }
+    .add > .MuiButton-contained {
+        width: 16vw;
+        height: 4vh;
+    }
+    .wish > .MuiButton-contained {
+        width: 12vw;
+        height: 4vh;
+    }
+}
+
+@media only screen and (min-width: 630px) and (max-width:733px) {
+    .bookdisplay_main {
+        margin-left: 0rem;        
+    }
+    .book_header {
+        margin-left: 4.9rem;        
+    }
+    .books_main {
+        min-height: 54vh;        
+    }
+    .add > .MuiButton-contained {
+        width: 18vw;
+        height: 4vh;
+    }
+    .wish > .MuiButton-contained {
+        width: 12vw;
+        height: 4vh;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .book_header {
+        margin-top: 3.5rem;
+        margin-left: 3rem;
+    }
+    .bookdisplay_main {
+        margin-left: -0.2rem;
+    }
+    .add > .MuiButton-contained {
+        width: 34vw;
+    }
+    .wish > .MuiButton-contained {
+        width: 24vw;
+    }
+    .books_main {
+        min-height: 50vh;        
+    }
+}
+
+@media screen and (max-width: 340px){
+    .book_header {
+        margin-top: 3.5rem;
+        margin-left: 2.2rem;
+    }
+    .bookdisplay_main {
+        margin-left: 0rem;
+    }
+    .add > .MuiButton-contained {
+        width: 39vw;
+    }
+    .wish > .MuiButton-contained {
+        width: 29vw;
+    }
+    .books_main {
+        min-height: 65vh;        
+    }
+    .pagination {
+        margin: 2rem -1rem 2rem -1rem;        
+    }
 }

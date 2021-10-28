@@ -41,7 +41,7 @@ $color: grey;
     width: 89%;
     margin-left: 7%;
 }
-.side-header{
+.side_header{
     @include icon(flex,null,space-around);
     width: 200px;
     margin-left: 190px;
@@ -59,4 +59,82 @@ $color: grey;
     padding: 0 0px !important;
     height: 18px !important;
     font-size: 0.6rem !important;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .search {
+        height: 4vh;
+        width: 50%;
+        margin-left: 4rem;
+    }
+    .header_title {
+        margin-left: 4.5rem;        
+    }
+    .input {
+        margin-left: 13%;
+    }
+    .side_header {
+        margin-left: 0rem;        
+    }
+    .text {
+        margin-left: 0.5rem;        
+    }
+}
+
+@media only screen and (min-width: 630px) and (max-width:733px) {
+    .search {
+        width: 50%;
+        margin-left: 4rem;
+    }
+    .header_title {
+        margin-left: 4.5rem;        
+    }
+    .input {
+        margin-left: 13%;
+    }
+    .side_header {
+        margin-left: 0rem;        
+    }
+    .text {
+        margin-left: 0.5rem;        
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .search {
+        height: 0vh;
+        width: 0%;
+    }
+    .header_title {
+        margin-left: 3.5rem;        
+    }
+    .searchIcon {
+        margin-left: 4rem;        
+    }
+    .side_header {
+        margin-left: 6rem;        
+    }
+    .text {
+        margin-left: 0.4rem;        
+    }
+}
+
+@media screen and (max-width: 340px){
+    .search {
+        height: 0vh;
+        width: 0%;
+    }
+    .header_title {
+        margin-left: 3rem;        
+    }
+    .searchIcon {
+        margin-left: 2rem;        
+    }
+    .side_header {
+        margin-left: 5rem;        
+    }
+    .text {
+        margin-left: 0.4rem;        
+    }
 }
