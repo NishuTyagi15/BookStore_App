@@ -35,8 +35,11 @@ span.forget {
     width: 100%;
     margin-top: 18px;
 }
-.button2 > .MuiButton-label {
+.button3 > .MuiButton-label {
     color: #000 !important;
+}
+.or {
+    margin-top: 14px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
@@ -53,7 +56,7 @@ span.forget {
 
 @media screen and (min-width: 360px) and (max-width: 630px){
     .signup {
-        height: 45vh;
+        height: 48vh;
     }
     .signup_inputs {
         width: 62vw;
@@ -65,9 +68,9 @@ span.forget {
 
 @media screen and (max-width: 340px){
     .signup {
-        height: 65vh;
+        height: 70vh;
     }
     .signup_inputs {
-        height: 58vh;
+        height: 60vh;
     }
 }

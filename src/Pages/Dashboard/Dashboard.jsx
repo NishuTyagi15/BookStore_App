@@ -6,22 +6,46 @@ import Signup from '../SignUp/Signup';
 import Login from '../Login/Login';
 
 export class Dashboard extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            open: true,
+            opensign:false
+        }
+    }
+
+    login = () => {
+        this.setState({
+            open: true,
+            opensign: false
+        })
+    }
+
+    signUp = () => {
+        this.setState({
+            open: false,
+            opensign: true
+        })
+    }
+    
     render() {
         return (
             <div className="dash_main">
                 <div className="book_main">
                     <div className="img_main">
                     <img alt="" src={Image}></img>
-                    <span style={{ marginTop: '16px' }}>Online Book Shopping</span>
+                    <span className="book_title">Online Book Shopping</span>
                     </div>
                 </div>
                 <div className="main_content">
                     <div className="title">
-                        <Link style={{textDecoration:"none",color:"black"}} to={`/`} >
-                            <span className="btn">LOGIN </span>
+                        <Link className="link" style={{color:this.state.open ? 'black' : 'grey'}} to={`/`} >
+                            <span style={{color:this.state.open?'black':'grey', textDecoration:this.state.open?'underline': 'none', textDecorationColor:this.state.open?'maroon':'white'}}
+                                onClick={this.login} className="btn active1">LOGIN </span>
                         </Link>
-                        <Link style={{textDecoration:"none",color:"black"}} to={`/SignUp`} >
-                            <span className="btn">SIGNUP </span>
+                        <Link className="link" style={{color:this.state.opensign ? 'black' : 'grey'}} to={`/SignUp`} >
+                            <span style={{color:this.state.opensign ? 'black' : 'grey', textDecoration:this.state.opensign?'underline': 'none', textDecorationColor:this.state.opensign?'maroon':'white'}} onClick={this.signUp} className="btn active2">SIGNUP </span>
                         </Link>
                     </div>
                     <div className="box">

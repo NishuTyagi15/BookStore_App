@@ -37,7 +37,7 @@ $height: 58vh;
 }
 .main_content{
     background-color: white;
-    width: 25%;
+    width: 26%;
     height: 65vh;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 1px #a2a2a5;
@@ -59,16 +59,17 @@ $height: 58vh;
     font-size: 1.4rem;
     color: #c0b5b5;
 }
-.btn:hover ,.btn:focus{
-    color: black;
+.book_title {
+    margin-top: 16px;
 }
-
 .css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root {
     min-width: 210px !important;
 }
-
 .MuiFormControl-root {
     min-height: 4rem !important;
+}
+.link {
+    text-decoration: none;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
@@ -100,7 +101,12 @@ $height: 58vh;
     }
     .main_content {
         width: 90%;
-        height: 58vh;        
+    }
+    .title {
+        margin-top: 30px;
+    }
+    .dash_main {
+        background-color: #fff;
     }
 }
 
@@ -109,7 +115,10 @@ $height: 58vh;
         display: none;
     }
     .main_content {
-        width: 90%;
-        height: 86vh;        
+        width: 100%;
+        height: 100vh;        
+    }
+    .title {
+        margin-top: 2rem;
     }
 }

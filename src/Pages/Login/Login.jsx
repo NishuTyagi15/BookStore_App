@@ -104,12 +104,12 @@ export default class Login extends Component {
                         </Button>
                     </div>
 
-                    <span style={{ marginTop: '14px' }}>---------- OR ----------</span>
+                    <span className="or">---------- OR ----------</span>
                     <div className="buttons">
-                        <Button className="button" variant="contained" color="primary">
+                        <Button className="button2" variant="contained" color="primary">
                             Facebook
                         </Button>
-                        <Button className="button" variant="contained" color="red">
+                        <Button className="button3" variant="contained" color="red">
                             Google
                         </Button>
                     </div>
