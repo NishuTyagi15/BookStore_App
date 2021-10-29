@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './Header.scss';
 import education from '../../Assets/education.png';
-// import Cartbag from '../Cartbag/Cartbag';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
+import { Link } from "react-router-dom";
 
 class Header extends Component {
     constructor(props) {
@@ -17,10 +17,6 @@ class Header extends Component {
         }
     }
     
-    redirectTo = () => {
-        window.location('/cart');
-    }
-
     render() {
         return (
             <>
@@ -49,9 +45,10 @@ class Header extends Component {
                                         vertical: 'top',
                                         horizontal: 'right',
                                     }}
-                                    onClick={() => this.redirectTo()}
                                     >
-                                    <ShoppingCartOutlined />
+                                    <Link style={{textDecoration:'none', color:'white'}} to={'/cart'}>
+                                        <ShoppingCartOutlined />
+                                    </Link>
                                 </Badge>
                             </div>
                         </div>

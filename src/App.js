@@ -9,17 +9,17 @@ import OrderSuccess from './Components/OrderPlaced/OrderSuccess';
 function App() {
   return (
     <div className="App">
-      {/* <Router>
+      <Router>
         <Switch>
           <Route exact path="/">
             <Redirect to="/dashboard" />
           </Route>
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/home" component={Home} />
+          <Route path="/cart" component={CartBag} />
+          <Route path="/orderplaced" component={OrderSuccess} />
         </Switch>
-      </Router> */}
-      {/* <CartBag/> */}
-      <OrderSuccess />
+      </Router>
     </div>
   );
 }
