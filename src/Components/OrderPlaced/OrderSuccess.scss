@@ -56,7 +56,6 @@ $border: 1px solid lightgray;
     }
     .success_text {
         width: 40%;
-        // margin-top: 2rem
     }
     .info_table {
         margin-top: 5rem;
@@ -66,7 +65,23 @@ $border: 1px solid lightgray;
     }
 }
 
-@media only screen and (min-width: 630px) and (max-width:733px) {
+@media only screen and (min-width: 630px) and (max-width:750px) {
+    .success_main {
+        min-height: 100vh;
+    }
+    .image1 {
+        width: 40vw !important;
+        margin-top: 2rem;
+    }
+    .success_text {
+        width: 40%;
+    }
+    .info_table {
+        margin-top: 3rem;
+    }
+    .ctn_shopping {
+        margin-top: 2rem;
+    }
 }
 
 @media screen and (min-width: 360px) and (max-width: 630px){
