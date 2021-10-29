@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Books from './Books';
 import './BooksDisplay.scss';
 import Pagination from '@mui/material/Pagination';
@@ -7,12 +7,22 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ExpandMore from '@material-ui/icons/ExpandMore';
+import { 
+    Typography, 
+    Box, 
+    CssBaseline,
+    Container,
+    Grid,
+    Card,
+    CardContent
+} from '@material-ui/core';
 
 const BooksDisplay = (props) => { 
 
-    const bookList = props.bookarr.map((info) => <Books info={info} booksDisplay ={props.booksDisplay}/>);
+    const bookList = props.bookarr.map((index) => <Books index={index} booksDisplay ={props.booksDisplay}/>);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+    // const [page, setPage] = useState(1);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -62,11 +72,17 @@ const BooksDisplay = (props) => {
             </div>
 
             <div className="bookdisplay_main">{bookList}</div>
-            <div className="pagination">
+            {/* <div className="pagination">
                 <Stack spacing={2}>
-                    <Pagination count={18} shape="rounded" />
+                    <Typography>{page}</Typography>
+                    <Pagination 
+                        count={18} 
+                        shape="rounded" 
+                        defaultPage={page}
+                        onChange={(event, value) => setPage(value)}
+                    />
                 </Stack>
-            </div>
+            </div> */}
         </div>
     );
 };
