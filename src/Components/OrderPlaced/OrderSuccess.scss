@@ -1,29 +1,31 @@
-.success_main{
+$border: 1px solid lightgray; 
+
+.success_main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
-.success_img{
+.success_img {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px 10px 10px 10px;  
 }
-.image1{
+.image1 {
     margin-top: 2rem;
     width: 24vw !important;
 }
-.ctn_shopping{
+.ctn_shopping {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
-.success_text{
+.success_text {
     font-size: large;
     font-family: ui-sans-serif;
     width: 22%;
@@ -31,19 +33,74 @@
     justify-content: center;
     margin-top: 1rem;
 }
-.info_table{
-    border: 1px solid lightgrey;
+.info_table {
+    border: $border;
     margin-top: 3rem;
-    // margin-bottom: -3rem;
-    th{
-        background-color: #DCDCDC;
+    th {
+        border-bottom: $border;
+        height: 6vh;
     }
-     td{
-         padding: 15px;
-     }
+    td {
+        padding: 16px;
+        border-right: $border;
+    }
 }
-@media only screen and (min-width: 360px) {
-    .image1{
-        width: 200px;
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .success_main {
+        min-height: 93vh;
+    }
+    .image1 {
+        width: 50vw !important;
+        margin-top: 3rem;
+    }
+    .success_text {
+        width: 40%;
+        // margin-top: 2rem
+    }
+    .info_table {
+        margin-top: 5rem;
+    }
+    .ctn_shopping {
+        margin-top: 4rem;
+    }
+}
+
+@media only screen and (min-width: 630px) and (max-width:733px) {
+}
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .success_main {
+        min-height: 93vh;
+    }
+    .image1 {
+        width: 60vw !important;
+        margin-top: -2rem;
+    }
+    .success_text {
+        width: 81%;
+        margin-top: 2rem
+    }
+    .info_table {
+        display: none;
+    }
+    .ctn_shopping {
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .success_main {
+        min-height: 88vh;
+    }
+    .image1 {
+        width: 60vw !important;
+        margin-top: 3rem;
+    }
+    .success_text {
+        width: 91%;
+    }
+    .info_table {
+        display: none;
     }
 }
