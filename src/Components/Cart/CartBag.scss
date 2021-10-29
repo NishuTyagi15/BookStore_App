@@ -5,248 +5,277 @@
     justify-content: $justify;
     height: $height;
     width: $width;
-  
 }
-$margin-left: 162px;
+
+$margin-left: -14rem;
 $border: 1px solid #d9cccc;
-.CartBag-frame {
-    @include flex(flex,center ,column ,null ,100% ,100px );
+
+.CartBag_frame {
+    @include flex(flex,center ,column ,null ,100% ,6rem );
     align-items: center;
+    margin-left: $margin-left;
 }
-.header-detail {
+.cartBag_head{
+    width: 50%;
+    border: $border;
+    min-height: 42vh;
+}
+.head {
+    margin-left: -40rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+.btn_content1 {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 10rem;
+    right: 2rem;
+}
+.btn_place1 {
+    background-color: #3371b5 !important;
+    color: white !important;
+}
+.header_detail1 {
     font-weight: 600;
     font-size: 18px;
 }
-.title {
-    width: 81%;
-}
-.cartBag-content {
-    width: 55%;
-    min-height: 100px;
-    border: $border;
-    padding: 20px;
-    margin-top: 20px;
-    margin-left: -19rem ;
-}
-
-.cartBag-content > div {
-    font-weight: 600;
-}
-.main-cart {
+.main_cart {
     display: flex;
 }
-.bag-text {
-    @include flex(flex, space-evenly, column, 300px, 161px, null);
+.bag_text {
+    @include flex(flex, space-evenly, column, 130%, 12vh, null);
 }
-.img-book {
-    width: 94px;
-    margin: 20px 20px 10px 5px;
+.img_book {
+    width: 6vw;
+    margin: 0rem 0rem 0rem 2rem;
 }
-.cart-title {
+.text_content{
+    width: 28%;
+    margin-top: -0.7rem;
+}
+.cart_title {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.2rem;
 }
-.cart-bookAuthor {
-    font-size: 15px;
-    height: 12px;
+.cart_bookAuthor {
+    font-size: 0.8rem;
     color: #a49595;
+    margin-left: -6.5rem;
     font-weight: 600;
 }
 .price {
     font-weight: bold;
+    margin-left: -8.5rem;
 }
-.text-content{
-    width: 180px;
-}
-.count-content {
+.count_content {
     display: flex;
+    margin: 2.5rem 0rem 0rem 3rem;
+    width: 100%;
     .minus {
-        @include flex(flex, center, null, 24px, 23px, null);
+        @include flex(flex, center, null, 20px, 20px, null);
         border: $border;
         align-items: center;
         border-radius: 15px;
         font-size: 23px;
         font-weight: bold;
+        cursor: pointer;
+        background-color: rgb(248, 244, 244);
     }
     .count {
-        width: 54px;
+        width: 20%;
         border: $border;
         margin: 0px 7px 0px 7px;
         display: flex;
         justify-content: center;
     }
     .plus {
-        @include flex(flex, center, null, 24px, 23px, null);
+        @include flex(flex, center, null, 20px, 20px, null);
         border: $border;
         align-items: center;
         border-radius: 15px;
         font-size: 23px;
         font-weight: bold;
+        cursor: pointer;
+        background-color: rgb(248, 244, 244);
     }
     .remove {
         cursor: pointer;
         margin-left: 39px;
     }
 }
-.btn-content {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 37px;
-}
-.btn-place {
-    background-color: #3371b5 !important;
-    color: white !important;
-}
-.address-frame {
-    @include flex(flex, center, column, 56%, 74px, 12px);
+.address_frame {
+    @include flex(flex, center, column, 58.3%, 12vh, 12px);
     border: $border;
-    padding-left: 23px;
-    margin-left: 13.2rem;
+    margin-left: 10.5rem;
+    margin-top: 1.5rem;
 }
-.order-frame {
-    @include flex(flex, center, column, 78%, 30px, 12px);
-    border: $border;
-    padding: 23px;
-    margin-bottom: 200px;
-}
-.address-frame-details {
-    @include flex(flex, space-evenly, column, 54.5%, 552px, null);
+.address_frame_details {
+    @include flex(flex, space-evenly, column, 55%, 80vh, null);
     border: $border;
     margin-top: 12px;
     padding: 23px;
-    margin-left: 13rem ;
+    margin-left: 10.5rem ;
 }
-.customer-dtl {
+.customer_dtl {
     display: flex;
     justify-content: space-between;
 }
-.dtl-btn {
-    color: #a03037 !important;
-}
-.custm-content-names {
+.custm_content_names {
     @include flex(flex, space-between, null, 460px, null, null);
 }
-.heading {
-    @include flex(flex, space-between, null, 158px, null, null);
+.fname_pno {
+    margin-top: 2rem;
 }
-.aheading > .work {
-    font-weight: 500;
-    font-size: 0.9rem;
-
-}
-.address-feild {
+.address_feild {
     width: 462px;
     height: 78px !important;
 }
-
-.MuiOutlinedInput-input{
-    padding-bottom: 1rem !important;
-}
-.city-state {
+.city_state {
     display: flex;
     width: 464px;
     justify-content: space-between;
 }
-.order-content {
-    width: 78%;
-    min-height: 300px;
+.btn_content2 {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn_place2 {
+    background-color: #3371b5 !important;
+    color: white !important;
+}
+.type {
+    color: black;
+}
+legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root {
+    margin-left: -23rem;
+}
+.MuiFormGroup-root.MuiFormGroup-row.css-qfz70r-MuiFormGroup-root {
+    margin-left: -23rem;
+}
+.order_frame {
+    @include flex(flex, center, column, 54.8%, 30px, 12px);
+    border: $border;
+    padding: 23px;
+    margin: 1.5rem 0rem 7rem 10.5rem;
+}
+.order_content {
+    width: 55.4%;
+    min-height: 36vh;
     border: 1px solid #d9cccc;
     padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 164px;
+    margin: 1.5rem 0rem 7rem 10.5rem;
 }
-// .continue{
+.header_detail2 {
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: -35rem;
+}
+.main_cart2 {
+    display: flex;
+}
+.bag_text2 {
+    @include flex(flex, space-evenly, column, 130%, 12vh, null);
+}
+.img_book2 {
+    width: 6vw;
+    margin: 2rem 0rem 0rem 2rem;
+}
+.text_content2 {
+    width: 28%;
+    margin-top: 1.5rem;
+}
+.btn_content3 {
+    display: flex;
+    justify-content: flex-end;
+    height: 6vh;
+    position: relative;
+    top: 10rem;
+    left: 19rem;
+}
+.btn_place3 {
+    background-color: #3371b5 !important;
+    color: white !important;
+}
 
-// }
 @media screen and (width: 500px) {
     $width: 616px;
     $marginleft: 641px;
 
-    .cartBag-content{
+    .cartBag_content{
         margin-left:$marginleft;
         width:$width;
     }
-    .address-frame-details{
+    .address_frame_details{
         height: 856px;
         margin-left: $marginleft;
         width:$width;
     }
-    .address-frame{
+    .address_frame{
         margin-left:$marginleft;
         width:$width;
     }
-    .order-frame{
+    .order_frame{
         margin-left:$marginleft;
         width:$width;
     }
-    .order-content{
+    .order_content{
         margin-left: $marginleft;
         width:$width;
     }
-    .custm-content-names{
+    .custm_content_names{
         height: 106px;
     }
-    .city-state{
+    .city_state{
         height: 106px;
     }
 }
 @media screen and (width: 600px) {
-    .custm-content-names {
+    .custm_content_names {
         flex-direction: column;
     }
-    .address-feild {
+    .address_feild {
         width: 383px;
     }
-    .city-state {
+    .city_state {
         flex-direction: column;
     }
 }
 @media screen and (width: 360px) {
-    .address-feild {
+    .address_feild {
         width: 212px;
     }
-    .dtl-btn {
+    .dtl_btn {
         font-size: 9px;
         width: 130px;
         height: 39px;
     }
-    .header-detail {
+    .header_detail {
         font-size: 17px;
     }
-    .title {
+    .title2 {
         width: 94%;
     }
-    .cartBag-content{
+    .cartBag_content{
         margin-left: $margin-left;
     }
-    .address-frame-details{
+    .address_frame_details{
         height: 856px;
         margin-left: $margin-left;
     }
-    .address-frame{
+    .address_frame{
         margin-left: $margin-left;
     }
-    .order-frame{
+    .order_frame{
         margin-left: $margin-left;
     }
-    .order-content{
+    .order_content{
         margin-left: $margin-left;
     }
-    .custm-content-names{
+    .custm_content_names{
         height: 106px;
     }
-    .city-state{
+    .city_state{
         height: 106px;
     }
-}
-
-
-
-// my css 
-
-legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root {
-    margin-left: -21.8rem;
-}
-.MuiFormGroup-root.MuiFormGroup-row.css-qfz70r-MuiFormGroup-root {
-    margin-left: -20rem;
 }
