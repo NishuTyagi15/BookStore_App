@@ -7,6 +7,9 @@ class AxiosService {
     getMeth(url, header=false) {
         return axios.get(url, header);
     }
+    putMeth(url, header=false) {
+        return axios.put(url, header);
+    }
 }
 
 export default AxiosService;
