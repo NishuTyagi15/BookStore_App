@@ -50,9 +50,9 @@ export default class Login extends Component {
             console.log(signinObj);
             obj.login(signinObj).then((response)=> {
                 console.log(response);
-                localStorage.setItem("token", response.data.id);
+                localStorage.setItem("token", response.data.result.accessToken);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Successful!"})
-                var timer  = setTimeout(function(){
+                var timer  = setTimeout(function() {
                     window.location = '/home'
                 }, 2000);
             }).catch((error)=>{

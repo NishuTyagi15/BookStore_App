@@ -5,7 +5,7 @@ const baseurl = "https://new-bookstore-backend.herokuapp.com/bookstore_user/"
 const token = localStorage.getItem("token");
 const headerconfig = {
     headers: {
-    Authorization: token,
+    "x-access-token": token,
     }
 };
 
@@ -22,16 +22,12 @@ class UserServices {
         let response = obj.getMeth(`${baseurl}get/book`, data, headerconfig);
         return response;
     }
+    addToCart(id){
+        let response = obj.postMeth(`${baseurl}add_cart_item/${id}`,{}, headerconfig);
+        return response;   
+    }
     getCartItem(data) {
         let response = obj.getMeth(`${baseurl}get_cart_items`, data, headerconfig);
-        return response;
-    }
-    customerDetails(data) {
-        let response = obj.putMeth(`${baseurl}edit_user`, data, headerconfig);
-        return response;
-    }
-    orderItem(data) {
-        let response = obj.postMeth(`${baseurl}add/order`, data, headerconfig);
         return response;
     }
 }

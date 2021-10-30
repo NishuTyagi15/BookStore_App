@@ -26,7 +26,21 @@ export class Cart extends Component {
     
         this.state = {
             open: false,
-            openContent: false,          
+            openContent: false, 
+            FullName : "",
+            Number : "",
+            PinCode : "",
+            Locality:"",
+            Address: "",
+            City: "",
+            State:"",
+            nameError: false,
+            numberError:false,
+            pinError:false,
+            locError:false,
+            addError:false,
+            cityError:false,
+            stateError:false,         
         }
     }
 
@@ -35,7 +49,35 @@ export class Cart extends Component {
     }
 
     handleClick2 = () => {
-        this.setState({ openContent: true });
+        var isValid = this.isValidated();
+        if(!isValid) {
+            this.setState({ openContent: true });
+        }
+    }
+
+    isValidated = () => {
+        let isError = false;
+        const errors = this.state;
+        errors.nameError= this.state.FullName !=='' ? false : true;
+        errors.numberError= this.state.Number !=='' ? false : true;
+        errors.cityError= this.state.City !=='' ? false : true;
+        errors.pinError= this.state.PinCode !=='' ? false : true;
+        errors.addError= this.state.Address !=='' ? false : true;
+        errors.locError= this.state.Locality !=='' ? false : true;
+        errors.stateError= this.state.State !=='' ? false : true;
+      
+        this.setState({
+            ...errors
+        })
+
+        return isError =errors.nameError || errors.numberError || errors.pinError || errors.addError || errors.locError || errors.stateError || errors.cityError 
+    }
+
+    change = (e) => {
+        console.log(e.target.value);
+        this.setState({
+            [e.target.name] : e.target.value
+        });
     }
    
     render() {
@@ -87,6 +129,9 @@ export class Cart extends Component {
                                         type="text"
                                         name="FullName"
                                         variant="outlined"
+                                        error = {this.state.nameError}
+                                        onChange = {e => this.change(e)}
+                                        helperText = {this.state.nameError ? "Enter your Name" : ''} 
                                     />
                                 </div>
                             </div>
@@ -98,6 +143,9 @@ export class Cart extends Component {
                                         type="text"
                                         name="Number"
                                         variant="outlined"
+                                        error = {this.state.numberError}
+                                        onChange = {e => this.change(e)}
+                                        helperText = {this.state.numberError ? "Enter Mobile Number" : ''} 
                                     />
                                 </div>
                             </div>
@@ -110,6 +158,9 @@ export class Cart extends Component {
                                     type="text"
                                     name="PinCode"
                                     variant="outlined"
+                                    error = {this.state.pinError}
+                                    onChange = {e => this.change(e)}
+                                    helperText = {this.state.pinError ? "Enter your Pincode" : ''}
                                 />
                             </div>
                             <div className="InputFields">
@@ -119,6 +170,9 @@ export class Cart extends Component {
                                     type="text"
                                     name="Locality"
                                     variant="outlined"
+                                    error = {this.state.locError}
+                                    onChange = {e => this.change(e)}
+                                    helperText = {this.state.locError ? "Enter your Locality" : ''} 
                                 />
                             </div>
                         </div>
@@ -130,6 +184,9 @@ export class Cart extends Component {
                                 variant="outlined"
                                 size="large"
                                 fullWidth
+                                error = {this.state.addError}
+                                onChange = {e => this.change(e)}
+                                helperText = {this.state.addError ? "Enter your Address" : ''} 
                             />
                         </div>
                         <div className="city_state">
@@ -141,6 +198,9 @@ export class Cart extends Component {
                                         type="text"
                                         name="City"
                                         variant="outlined"
+                                        error = {this.state.cityError}
+                                        onChange = {e => this.change(e)}
+                                        helperText = {this.state.cityError ? "Enter your City/Town" : ''} 
                                     />
                                 </div>
                             </div>
@@ -152,6 +212,9 @@ export class Cart extends Component {
                                         type="text"
                                         name="State"
                                         variant="outlined"
+                                        error = {this.state.stateError}
+                                        onChange = {e => this.change(e)}
+                                        helperText = {this.state.stateError ? "Enter LandMark" : ''}
                                     />
                                 </div>
                             </div>

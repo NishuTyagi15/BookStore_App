@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import './OrderSuccess.scss';
 import Success from '../../Assets/success.png';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 
 class OrderSuccess extends Component {
     constructor(props) {
@@ -12,10 +13,6 @@ class OrderSuccess extends Component {
         this.state = {
              
         }
-    }
-
-    continueShoping = () => {
-        window.location('/dashboard');
     }
 
     render() {
@@ -44,9 +41,11 @@ class OrderSuccess extends Component {
                         </table>
                     </div>
                     <div className="ctn_shopping">
-                        <Button className="shop_btn" onClick={this.continueShoping} fullWidth size="small" color="primary" variant="contained">
-                            Continue Shopping
-                        </Button>
+                        <Link style={{textDecoration:'none', color:'white'}} to={'/dashboard'}>
+                            <Button className="shop_btn" fullWidth size="small" color="primary" variant="contained">
+                                Continue Shopping
+                            </Button>
+                        </Link>
                     </div>
                 </div>
                 <Footer />

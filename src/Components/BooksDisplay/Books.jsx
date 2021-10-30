@@ -5,8 +5,19 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import UserServices from '../../Services/UserService';
+
+const obj = new UserServices();
 
 const Books = (props) => {
+
+    const addToCart = (index) => {
+        obj.addToCart(index._id).then((response) => {   
+          console.log(response);   
+        }).catch(error => {
+          console.log("error", error);
+        })
+    }
 
     return (
         <div>
@@ -21,7 +32,7 @@ const Books = (props) => {
                 </CardActions>
                 <div className="book_buttons">
                     <div className="add">
-                        <Button className="btn1" variant="contained" color="red">
+                        <Button className="btn1" variant="contained" color="red" onClick={() => { addToCart(props.index) }}>
                             Add To Bag
                         </Button>
                     </div>

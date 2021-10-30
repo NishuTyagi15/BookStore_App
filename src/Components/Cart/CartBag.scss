@@ -253,7 +253,7 @@ legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root 
     .header_detail {
         font-size: 17px;
     }
-    .title2 {
+    .title {
         width: 94%;
     }
     .cartBag_content{
@@ -277,5 +277,121 @@ legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root 
     }
     .city_state{
         height: 106px;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+    .cartBag_content{
+        margin-left: -4rem;
+        width:62%;
+    }
+    .address_frame{
+        margin-left: 6rem;
+        width: 64%;
+    }
+    .order_frame{
+        margin-left: 6.1rem;
+        width: 61%;
+    }
+    .address_frame_details{
+        margin-left: 6rem;
+        width: 60.5%;
+    }
+
+
+    .order_content{
+        margin-left: 6rem;
+        width:61.5%;
+    }
+
+    .MuiOutlinedInput-root{
+        margin-right: 2rem !important;
+        padding:0px !important;
+    }
+
+    .MuiInputBase-fullWidth{
+        width:93% !important;
+    }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .cartBag-content{
+        margin-left: -10rem;
+        border:none;
+    }
+    .cartBag-content > .btn-content , .order-content > .btn-content, .address-frame> .btn-content{
+        margin-right: -9rem;
+    }
+    .address-frame , .address-frame-details , .order-content{
+        margin-left: -1rem;
+        border:none;
+    }       
+    .order-frame{
+        margin-left: -0.8rem;
+        border:none;
+    }
+    .custm-content-names, .city-state{
+        width: 303px;
+    }
+    .custm-content-names > .MuiFormControl-root{
+        margin-right: 1rem !important;
+    }
+    .MuiInputBase-fullWidth{ 
+        width:143% !important;
+        
+    }
+    .btn_content{
+        margin-right: -8rem ;
+    }
+    .dtl_btn{
+        font-size: 15px;
+        margin-right: -15rem;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .cartBag_content{
+        margin-left: -10rem;
+        border:none;
+        min-height: 51vh;
+    }
+    .cartBag_content > .btn_content , .order_content > .btn_content, .address_frame> .btn_content{
+        margin-right: -7rem;
+    }
+    .address_frame_details , .order_content{
+        margin-left: -1rem;
+        border:none;
+        height: 606px;
+    }       
+    .order_frame{
+        margin-left: -0.8rem;
+        border:none;
+    }
+    .address_frame{
+        height: 11px !important;
+        margin-left: -1rem;
+        border:none;
+    }
+    .custm_content_names, .city_state{
+        display:block;
+        width: 303px;
+    }      
+    .MuiInputBase-fullWidth{      
+        width: 47% !important;        
+    }
+    .btn_content{
+        margin-right: -7rem ;
+    }
+    .dtl_btn{
+        font-size: 15px;
+        margin-right: -7rem;
+    }
+    .count_content > .remove{
+        margin-right: 1.5rem;
+        margin-left:18px;
     }
 }

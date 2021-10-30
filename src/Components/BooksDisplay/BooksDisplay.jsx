@@ -68,7 +68,7 @@ const BooksDisplay = (props) => {
             </div>
             <div className="book_header">
                 <h2 className="book_name">Books</h2>
-                <p className="header_txt">(128 items)</p>
+                <p className="header_txt">({props.bookarr.length})</p>
             </div>
 
             <div className="bookdisplay_main">{bookList}</div>

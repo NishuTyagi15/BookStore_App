@@ -44,7 +44,7 @@ $color: grey;
 .side_header{
     @include icon(flex,null,space-around);
     width: 200px;
-    margin-left: 190px;
+    margin-left: 16.5rem;
 }
 .cart_main{
     @include icon(flex,row,null);
