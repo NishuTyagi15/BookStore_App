@@ -41,7 +41,7 @@ class OrderSuccess extends Component {
                         </table>
                     </div>
                     <div className="ctn_shopping">
-                        <Link style={{textDecoration:'none', color:'white'}} to={'/dashboard'}>
+                        <Link style={{textDecoration:'none', color:'white'}} to={'/home'}>
                             <Button className="shop_btn" fullWidth size="small" color="primary" variant="contained">
                                 Continue Shopping
                             </Button>

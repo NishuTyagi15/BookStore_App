@@ -198,92 +198,7 @@ legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root 
     color: white !important;
 }
 
-@media screen and (width: 500px) {
-    $width: 616px;
-    $marginleft: 641px;
-
-    .cartBag_content{
-        margin-left:$marginleft;
-        width:$width;
-    }
-    .address_frame_details{
-        height: 856px;
-        margin-left: $marginleft;
-        width:$width;
-    }
-    .address_frame{
-        margin-left:$marginleft;
-        width:$width;
-    }
-    .order_frame{
-        margin-left:$marginleft;
-        width:$width;
-    }
-    .order_content{
-        margin-left: $marginleft;
-        width:$width;
-    }
-    .custm_content_names{
-        height: 106px;
-    }
-    .city_state{
-        height: 106px;
-    }
-}
-@media screen and (width: 600px) {
-    .custm_content_names {
-        flex-direction: column;
-    }
-    .address_feild {
-        width: 383px;
-    }
-    .city_state {
-        flex-direction: column;
-    }
-}
-@media screen and (width: 360px) {
-    .address_feild {
-        width: 212px;
-    }
-    .dtl_btn {
-        font-size: 9px;
-        width: 130px;
-        height: 39px;
-    }
-    .header_detail {
-        font-size: 17px;
-    }
-    .title {
-        width: 94%;
-    }
-    .cartBag_content{
-        margin-left: $margin-left;
-    }
-    .address_frame_details{
-        height: 856px;
-        margin-left: $margin-left;
-    }
-    .address_frame{
-        margin-left: $margin-left;
-    }
-    .order_frame{
-        margin-left: $margin-left;
-    }
-    .order_content{
-        margin-left: $margin-left;
-    }
-    .custm_content_names{
-        height: 106px;
-    }
-    .city_state{
-        height: 106px;
-    }
-}
-
-
-
 @media screen and (min-width: 768px) and (max-width: 1024px){
-
     .cartBag_content{
         margin-left: -4rem;
         width:62%;
@@ -300,8 +215,6 @@ legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root 
         margin-left: 6rem;
         width: 60.5%;
     }
-
-
     .order_content{
         margin-left: 6rem;
         width:61.5%;
@@ -319,25 +232,31 @@ legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root 
 
 
 @media screen and (min-width: 360px) and (max-width: 630px){
-    .cartBag-content{
+    .CartBag_frame {
+        margin-left: 0rem; 
+        height: 91.7vh; 
+        margin-top: 0rem;      
+    }
+    .cartBag_head {
+        width: 80%;
+    }
+    .head {
+        margin-left: -10rem;        
+    }
+    .cartBag_content{
         margin-left: -10rem;
         border:none;
     }
-    .cartBag-content > .btn-content , .order-content > .btn-content, .address-frame> .btn-content{
+    .cartBag_content > .btn_content , .order_content > .btn_content, .address_frame> .btn_content{
         margin-right: -9rem;
     }
-    .address-frame , .address-frame-details , .order-content{
-        margin-left: -1rem;
-        border:none;
+    .address_frame, .order_frame{
+        display: none;
     }       
-    .order-frame{
-        margin-left: -0.8rem;
-        border:none;
-    }
-    .custm-content-names, .city-state{
+    .custm_content_names, .city_state{
         width: 303px;
     }
-    .custm-content-names > .MuiFormControl-root{
+    .custm_content_names > .MuiFormControl-root{
         margin-right: 1rem !important;
     }
     .MuiInputBase-fullWidth{ 

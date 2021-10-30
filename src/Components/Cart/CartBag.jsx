@@ -11,6 +11,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import { Link } from "react-router-dom";
+import UserServices from '../../Services/UserService';
+
+const obj = new UserServices();
 
 const styles = (theme) => ({
     backdrop: {
@@ -25,6 +28,7 @@ export class Cart extends Component {
         super(props)
     
         this.state = {
+            book: [],
             open: false,
             openContent: false, 
             FullName : "",
@@ -55,6 +59,19 @@ export class Cart extends Component {
         }
     }
 
+    componentDidMount() {
+        this.getCartItem();
+    }
+
+    getCartItem = () => {
+        obj.getCartItem().then((response) => {
+            console.log(response.data.result);
+            this.setState({ book: response.data.result });
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
     isValidated = () => {
         let isError = false;
         const errors = this.state;
@@ -81,18 +98,41 @@ export class Cart extends Component {
     }
    
     render() {
+        const cartDetails = this.state.book.map((value, index) => {
+            return (
+                <div className="main_cart">
+                    <div>
+                        <img className="img_book" src={Book} alt="" />
+                    </div>
+                    <div className="text_content">
+                        <div className="bag_text">
+                            <div className="cart_title">{value.product_id.bookName}</div>
+                            <div className="cart_bookAuthor">by {value.product_id.author}</div>
+                            <div className="price">Rs. {value.product_id.price}</div>
+                        </div>
+                        <div className="count_content">
+                            <div className="minus">-</div>
+                            <div className="count">1</div>
+                            <div className="plus">+</div>
+                            <div className="remove">Remove</div>
+                        </div>
+                    </div>
+                </div>
+            )
+        });    
         return (
             <div>
                 <Header />
                 <div className="CartBag_frame">
                     <div className="cartBag_head">
-                        <div className="head">My Cart (2)</div>
+                        <div className="head">My Cart ({this.state.book.length})</div>
                         <div className="btn_content1">
                             <Button variant="contained" className="btn_place1"  onClick={this.handleClick1} >
                                 Place Order
                             </Button>
                         </div> 
-                        <div className="main_cart">
+                        {cartDetails}
+                        {/* <div className="main_cart">
                             <div>
                                 <img className="img_book" src={Book} alt="" />
                             </div>
@@ -109,7 +149,7 @@ export class Cart extends Component {
                                     <div className="remove">Remove</div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
