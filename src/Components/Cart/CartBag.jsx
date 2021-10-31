@@ -47,19 +47,19 @@ export class Cart extends Component {
 
     handleClick2 = () => {
         var isValid = this.isValidated();
-        // let userData = {
-        //     "addressType": "Home",
-        //     "fullAddress": `${this.state.FullName},${this.state.Address},${this.state.Locality},${this.state.PinCode},${this.state.Number}`,
-        //     "city": this.state.City,
-        //     "state": this.state.State,
-        // }
+        let userData = {
+            "addressType": "Home",
+            "fullAddress": `${this.state.FullName},${this.state.Address},${this.state.Locality},${this.state.PinCode},${this.state.Number}`,
+            "city": this.state.City,
+            "state": this.state.State,
+        }
         if(!isValid) {
-            // obj.customerDetails(userData).then((response) => {
-            //     console.log(response);
+            obj.customerDetails(userData).then((response) => {
+                console.log(response);
                 this.setState({ openContent: true });
-            // }).catch(error => {
-            //     console.log(error);
-            // });
+            }).catch(error => {
+                console.log(error);
+            });
         }
     }
 
