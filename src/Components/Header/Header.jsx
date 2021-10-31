@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Component } from 'react'
 import './Header.scss';
 import education from '../../Assets/education.png';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,58 +9,53 @@ import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
 import { Link } from "react-router-dom";
 
-function Header(props) {
-    const [searchOpen, setSearchOpen] = React.useState(false);
-    const [search, setSearch] = React.useState("");
-    const [searchData, setSearchData] = React.useState([]);
+const searchBooks = (e) => {
+    this.props.search(e)
+}
 
-    useEffect(() => {
-        console.log("book data", props.book)
-    }, []);
+export class Header extends Component {
 
-    const searchBooks = (e) => {
-        props.search(e)
+    render() {
+        return (
+            <>
+                <AppBar className="header_main" position="fixed">
+                    <Toolbar>
+                        <div className="header_title">
+                            <img src={education} alt="Book"></img>
+                            <div className="text">Bookstore</div>
+                        </div>
+                        <div className="search">
+                            <div className="searchIcon">
+                                <SearchIcon />
+                            </div>
+                            <InputBase
+                                placeholder="Search…"
+                                className="input"
+                                onChange={e => searchBooks(e)}
+                            />
+                        </div>
+                        <div className="side_header">
+                            <div className="cart_main">
+                                <span className="cart">Cart</span>
+                                <Badge badgeContent={this.props.value}
+                                    className="badge"
+                                    color="primary"
+                                    anchorOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    }}
+                                >
+                                    <Link style={{ textDecoration: 'none', color: 'white' }} to={'/cart'}>
+                                        <ShoppingCartOutlined />
+                                    </Link>
+                                </Badge>
+                            </div>
+                        </div>
+                    </Toolbar>
+                </AppBar>
+            </>
+        )
     }
-
-    return (
-        <>
-            <AppBar className="header_main" position="fixed">
-                <Toolbar>
-                    <div className="header_title">
-                        <img src={education} alt="Book"></img>
-                        <div className="text">Bookstore</div>
-                    </div>
-                    <div className="search">
-                        <div className="searchIcon">
-                            <SearchIcon />
-                        </div>
-                        <InputBase
-                            placeholder="Search…"
-                            className="input"
-                            onChange={e => searchBooks(e)}
-                        />
-                    </div>
-                    <div className="side_header">
-                        <div className="cart_main">
-                            <span className="cart">Cart</span>
-                            <Badge badgeContent={2}
-                                className="badge"
-                                color="primary"
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                            >
-                                <Link style={{ textDecoration: 'none', color: 'white' }} to={'/cart'}>
-                                    <ShoppingCartOutlined />
-                                </Link>
-                            </Badge>
-                        </div>
-                    </div>
-                </Toolbar>
-            </AppBar>
-        </>
-    )
 }
 
 export default Header

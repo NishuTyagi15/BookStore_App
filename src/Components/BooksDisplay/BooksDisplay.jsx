@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Books from './Books';
 import './BooksDisplay.scss';
 import Pagination from '@mui/material/Pagination';
@@ -7,22 +7,20 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import { 
-    Typography, 
-    Box, 
-    CssBaseline,
-    Container,
-    Grid,
-    Card,
-    CardContent
-} from '@material-ui/core';
+import { Typography} from '@material-ui/core';
+import UserServices from '../../Services/UserService';
+
+const obj = new UserServices();
 
 const BooksDisplay = (props) => { 
 
-    const bookList = props.bookarr.map((index) => <Books index={index} booksDisplay ={props.booksDisplay}/>);
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [bookarr, setBooks] = React.useState([]);
+    const [search, setSearchBook] = React.useState("");
+    const [searchData, setSearchData] = React.useState([]);
+    const [page, setPage] = useState(1);
+
     const open = Boolean(anchorEl);
-    // const [page, setPage] = useState(1);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -31,6 +29,66 @@ const BooksDisplay = (props) => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const ascending = () => {
+        let sortData = bookarr.sort((a, b) => (a.price < b.price && 1) || -1);
+        console.log(sortData);
+        setBooks(sortData);
+        handleClose();
+    };
+
+    const descending = () => {
+        let sortData = bookarr.sort((a, b) => (a.price > b.price && 1) || -1);
+        console.log(sortData);
+        setBooks(sortData);
+        handleClose();
+    };
+
+    const newArrivals = () => {
+        let sortData = bookarr.sort((a, b) => (a.bookName > b.bookName && 1) || -1);
+        console.log(sortData);
+        setBooks(sortData);
+        handleClose();
+    };
+
+    useEffect(() =>{
+        booksDisplay();
+    },[]);    
+
+    const booksDisplay = () => {
+        obj.getAllbooks().then((response) => {
+            setBooks(response.data.result );
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
+    const bookList = bookarr.map((index) => <Books index={index} booksDisplay ={booksDisplay}/>);
+
+    const searchBooks = (e) => {
+        setSearchBook(e.target.value);
+        console.log(e.target.value);
+        let filterBooks = bookarr;
+        filterBooks = bookarr.filter((val) => {
+
+            console.log(val);
+            return val.author.toLowerCase().includes(e.target.value)
+                || val.bookName.toLowerCase().includes(e.target.value)
+                || val.description.toUpperCase().includes(e.target.value)
+                || val.author.toUpperCase().includes(e.target.value)
+                || val.bookName.toUpperCase().includes(e.target.value)
+                || val.author.includes(e.target.value)
+                || val.bookName.includes(e.target.value)
+        })
+        if (e.target.value === "") {
+            setSearchData(filterBooks);
+            console.log(setSearchData(filterBooks))
+        }
+        else {
+            setSearchData(props.bookarr)
+            console.log("search data", setSearchData(filterBooks))
+        }
+    }
 
     return (
         <div>
@@ -61,18 +119,18 @@ const BooksDisplay = (props) => {
                         horizontal: 'left',
                     }}
                 >
-                    <MenuItem onClick={handleClose}>Price : Low to High</MenuItem>
-                    <MenuItem onClick={handleClose}>Price : High to Low</MenuItem>
-                    <MenuItem onClick={handleClose}>Newest Arrivals</MenuItem>
+                    <MenuItem value ="asec" onClick={ascending}>Price : Low to High</MenuItem>
+                    <MenuItem value="dsec" onClick={descending}>Price : High to Low</MenuItem>
+                    <MenuItem value="new_arri" onClick={newArrivals}>Newest Arrivals</MenuItem>
                 </Menu>
             </div>
             <div className="book_header">
                 <h2 className="book_name">Books</h2>
-                <p className="header_txt">({props.bookarr.length})</p>
+                <p className="header_txt">({bookarr.length})</p>
             </div>
 
             <div className="bookdisplay_main">{bookList}</div>
-            {/* <div className="pagination">
+            <div className="pagination">
                 <Stack spacing={2}>
                     <Typography>{page}</Typography>
                     <Pagination 
@@ -82,7 +140,7 @@ const BooksDisplay = (props) => {
                         onChange={(event, value) => setPage(value)}
                     />
                 </Stack>
-            </div> */}
+            </div>
         </div>
     );
 };

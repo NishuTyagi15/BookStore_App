@@ -15,13 +15,6 @@ import UserServices from '../../Services/UserService';
 
 const obj = new UserServices();
 
-const styles = (theme) => ({
-    backdrop: {
-        zIndex: theme.zIndex.drawer + 1,
-        color: 'black',
-      },
-});
-
 export class Cart extends Component {
 
     constructor(props) {
