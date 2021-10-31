@@ -34,6 +34,10 @@ class UserServices {
         let response = obj.putMeth(`${baseurl}edit_user`, data, headerconfig);
         return response;
     }
+    orderItem(data) {
+        let response = obj.postMeth(`${baseurl}add/order`, data, headerconfig);
+        return response;
+    }
 }
 
 export default UserServices
