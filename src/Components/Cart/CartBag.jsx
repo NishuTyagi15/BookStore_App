@@ -83,6 +83,29 @@ export class Cart extends Component {
         })
     }
 
+    orderPlaced = () => {
+        let orderDetails = [];
+        this.state.book.map((value) => {
+            let arr = {
+                "product_id": value.product_id._id,
+                "product_name": value.product_id.bookName,
+                "product_quantity": value.quantityToBuy,
+                "product_price": value.product_id.price
+            };
+            orderDetails.push(arr);
+        })
+    
+        let data = {
+            orders: orderDetails,
+        };
+        console.log("ORDER SUCCES DATA", data);       
+        obj.orderItem(data).then((response) => {           
+            console.log(response);   
+        }).catch((error) => {
+            console.log(error);
+        })   
+    }
+
     isValidated = () => {
         let isError = false;
         const errors = this.state;
@@ -301,7 +324,7 @@ export class Cart extends Component {
                         {orderDetails}
                         <div className="btn_content1">
                             <Link style={{ textDecoration: 'none', color: 'white' }} to={'/orderplaced'}>
-                                <Button variant="contained" className="btn_place1" >
+                                <Button variant="contained" className="btn_place1" onClick= {this.orderPlaced}>
                                     Checkout
                                 </Button>
                             </Link>
