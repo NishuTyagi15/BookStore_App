@@ -54,8 +54,19 @@ export class Cart extends Component {
 
     handleClick2 = () => {
         var isValid = this.isValidated();
+        // let userData = {
+        //     "addressType": "Home",
+        //     "fullAddress": `${this.state.FullName},${this.state.Address},${this.state.Locality},${this.state.PinCode},${this.state.Number}`,
+        //     "city": this.state.City,
+        //     "state": this.state.State,
+        // }
         if(!isValid) {
-            this.setState({ openContent: true });
+            // obj.customerDetails(userData).then((response) => {
+            //     console.log(response);
+                this.setState({ openContent: true });
+            // }).catch(error => {
+            //     console.log(error);
+            // });
         }
     }
 
@@ -119,37 +130,37 @@ export class Cart extends Component {
                     </div>
                 </div>
             )
-        });    
+        });  
+        
+        const orderDetails = this.state.book.map((value, index) => {
+            return (
+                <div className="main_cart2">
+                    <div>
+                        <img className="img_book2" src={Book} alt="" />
+                    </div>
+                    <div className="text_content2">
+                        <div className="bag_text">
+                            <div className="cart_title">{value.product_id.bookName}</div>
+                            <div className="cart_bookAuthor">by {value.product_id.author}</div>
+                            <div className="price">Rs. {value.product_id.price}</div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }); 
+
         return (
             <div>
                 <Header />
                 <div className="CartBag_frame">
                     <div className="cartBag_head">
                         <div className="head">My Cart ({this.state.book.length})</div>
+                        <div className="cart_details">{cartDetails}</div>
                         <div className="btn_content1">
-                            <Button variant="contained" className="btn_place1"  onClick={this.handleClick1} >
-                                Place Order
-                            </Button>
-                        </div> 
-                        {cartDetails}
-                        {/* <div className="main_cart">
-                            <div>
-                                <img className="img_book" src={Book} alt="" />
-                            </div>
-                            <div className="text_content">
-                                <div className="bag_text">
-                                    <div className="cart_title">Don't Make Me Think</div>
-                                    <div className="cart_bookAuthor">by Steve Kurg</div>
-                                    <div className="price">Rs. 1500</div>
-                                </div>
-                                <div className="count_content">
-                                    <div className="minus">-</div>
-                                    <div className="count">1</div>
-                                    <div className="plus">+</div>
-                                    <div className="remove">Remove</div>
-                                </div>
-                            </div>
-                        </div> */}
+                        <Button variant="contained" className="btn_place1" onClick={this.handleClick1} >
+                            Place Order
+                        </Button>
+                    </div>
                     </div>
                 </div>
 
@@ -248,13 +259,13 @@ export class Cart extends Component {
                                 <div>
                                     <TextField
                                         size="small"
-                                        label="LandMark"
+                                        label="State"
                                         type="text"
                                         name="State"
                                         variant="outlined"
                                         error = {this.state.stateError}
                                         onChange = {e => this.change(e)}
-                                        helperText = {this.state.stateError ? "Enter LandMark" : ''}
+                                        helperText = {this.state.stateError ? "Enter your State" : ''}
                                     />
                                 </div>
                             </div>
@@ -287,24 +298,13 @@ export class Cart extends Component {
 
                     <div className="order_content">
                         <div className="header_detail2" >Order Summary</div>
-                        <div className="main_cart2">
-                            <div>
-                                <img className="img_book2" src={Book} alt="" />
-                            </div>
-                            <div className="text_content2">
-                                <div className="bag_text2">
-                                    <div className="cart_title">Don't Make Me Think</div>
-                                    <div className="cart_bookAuthor">by Steve Kurg</div>
-                                    <div className="price">Rs. 1500</div>
-                                </div>
-                            </div>
-                            <div className="btn_content3">
-                                <Link style={{textDecoration:'none', color:'white'}} to={'/orderplaced'}>
-                                    <Button variant="contained" className="btn_place3" >
-                                        Checkout
-                                    </Button>
-                                </Link>
-                            </div>
+                        {orderDetails}
+                        <div className="btn_content1">
+                            <Link style={{ textDecoration: 'none', color: 'white' }} to={'/orderplaced'}>
+                                <Button variant="contained" className="btn_place1" >
+                                    Checkout
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                     :

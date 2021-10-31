@@ -119,16 +119,16 @@
         height: 4vh;
     }
     .sort{
-        right: 8rem;
+        right: 7.2rem;
     }
 }
 
-@media only screen and (min-width: 630px) and (max-width:733px) {
+@media only screen and (min-width: 630px) and (max-width:740px) {
     .bookdisplay_main {
         margin-left: 0rem;        
     }
     .book_header {
-        margin-left: 4.9rem;        
+        margin-left: 5.9rem;        
     }
     .books_main {
         min-height: 54vh;        
@@ -140,6 +140,9 @@
     .wish > .MuiButton-contained {
         width: 12vw;
         height: 4vh;
+    }
+    .sort {
+        margin-right: -1.2rem !important;
     }
 }
 
@@ -158,12 +161,12 @@
         width: 24vw;
     }
     .books_main {
-        min-height: 50vh;        
+        min-height: 47vh;        
     }
     .sort {
         font-size: 0rem !important;
         top: 4.5rem;
-        right: 1.5rem;
+        right: 3.3rem;
     }
 }
 
@@ -190,6 +193,6 @@
     .sort {
         font-size: 0rem !important;
         top: 4.5rem;
-        right: 1.5rem;
+        right: 2rem;
     }
 }

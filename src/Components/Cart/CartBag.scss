@@ -21,16 +21,15 @@ $border: 1px solid #d9cccc;
     min-height: 42vh;
 }
 .head {
-    margin-left: -40rem;
+    margin-left: 1.9rem;
     margin-top: 1rem;
     font-weight: 600;
 }
 .btn_content1 {
     display: flex;
     justify-content: flex-end;
-    position: relative;
-    top: 10rem;
-    right: 2rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 .btn_place1 {
     background-color: #3371b5 !important;
@@ -42,9 +41,12 @@ $border: 1px solid #d9cccc;
 }
 .main_cart {
     display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem
 }
 .bag_text {
-    @include flex(flex, space-evenly, column, 130%, 12vh, null);
+    @include flex(flex, space-evenly, column, 130%, 14vh, null);
+    margin-left: 3rem;
 }
 .img_book {
     width: 6vw;
@@ -57,21 +59,18 @@ $border: 1px solid #d9cccc;
 .cart_title {
     font-weight: 600;
     font-size: 1.2rem;
-    margin-left: -8rem;
 }
 .cart_bookAuthor {
     font-size: 0.8rem;
     color: #a49595;
-    margin-left: -6.5rem;
     font-weight: 600;
 }
 .price {
     font-weight: bold;
-    margin-left: -8.5rem;
 }
 .count_content {
     display: flex;
-    margin: 2.5rem 0rem 0rem 3rem;
+    margin: 1.5rem 0rem 0rem 3rem;
     width: 100%;
     .minus {
         @include flex(flex, center, null, 20px, 20px, null);
@@ -108,6 +107,7 @@ $border: 1px solid #d9cccc;
 .address_frame {
     @include flex(flex, center, column, 58.3%, 12vh, 12px);
     border: $border;
+    text-align: center;
     margin-left: 10.5rem;
     margin-top: 1.5rem;
 }
@@ -148,16 +148,11 @@ $border: 1px solid #d9cccc;
 .type {
     color: black;
 }
-legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root {
-    margin-left: -23rem;
-}
-.MuiFormGroup-root.MuiFormGroup-row.css-qfz70r-MuiFormGroup-root {
-    margin-left: -23rem;
-}
 .order_frame {
     @include flex(flex, center, column, 54.8%, 30px, 12px);
     border: $border;
     padding: 23px;
+    text-align: center;
     margin: 1.5rem 0rem 7rem 10.5rem;
 }
 .order_content {
@@ -170,13 +165,13 @@ legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root 
 .header_detail2 {
     font-weight: 600;
     font-size: 18px;
-    margin-left: -35rem;
+    margin-left: 1.9rem;
 }
 .main_cart2 {
     display: flex;
 }
 .bag_text2 {
-    @include flex(flex, space-evenly, column, 130%, 12vh, null);
+    @include flex(flex, space-evenly, column, 130%, 14vh, null);
 }
 .img_book2 {
     width: 6vw;
@@ -186,132 +181,274 @@ legend.MuiFormLabel-root.MuiFormLabel-colorPrimary.css-u4tvz2-MuiFormLabel-root 
     width: 28%;
     margin-top: 1.5rem;
 }
-.btn_content3 {
-    display: flex;
-    justify-content: flex-end;
-    height: 6vh;
-    position: relative;
-    top: 10rem;
-    left: 19rem;
+.cart_title2 {
+    font-weight: 600;
+    font-size: 1.2rem;
 }
-.btn_place3 {
-    background-color: #3371b5 !important;
-    color: white !important;
+.cart_bookAuthor2 {
+    font-size: 0.8rem;
+    color: #a49595;
+    font-weight: 600;
+}
+.price2 {
+    font-weight: bold;
+}
+.App {
+    text-align: left !important;
+}
+.css-1p5q5e5-MuiStack-root {
+    text-align: center !important;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
-    .cartBag_content{
-        margin-left: -4rem;
-        width:62%;
-    }
-    .address_frame{
-        margin-left: 6rem;
-        width: 64%;
-    }
-    .order_frame{
-        margin-left: 6.1rem;
-        width: 61%;
-    }
-    .address_frame_details{
-        margin-left: 6rem;
-        width: 60.5%;
-    }
-    .order_content{
-        margin-left: 6rem;
-        width:61.5%;
-    }
-
-    .MuiOutlinedInput-root{
-        margin-right: 2rem !important;
-        padding:0px !important;
-    }
-
-    .MuiInputBase-fullWidth{
-        width:93% !important;
-    }
-}
-
-
-@media screen and (min-width: 360px) and (max-width: 630px){
     .CartBag_frame {
         margin-left: 0rem; 
-        height: 91.7vh; 
-        margin-top: 0rem;      
     }
     .cartBag_head {
         width: 80%;
+        min-height: 33vh;
     }
-    .head {
-        margin-left: -10rem;        
+    .text_content {
+        margin-top: -1rem;
     }
-    .cartBag_content{
-        margin-left: -10rem;
-        border:none;
+    .bag_text {
+        height: 12vh;
+        width: 80%;
     }
-    .cartBag_content > .btn_content , .order_content > .btn_content, .address_frame> .btn_content{
-        margin-right: -9rem;
+    .img_book {
+        width: 16vw;
+        margin: 0rem 0rem 0rem 1.5rem;
     }
-    .address_frame, .order_frame{
-        display: none;
-    }       
-    .custm_content_names, .city_state{
-        width: 303px;
+    .cart_title {
+        font-size: 1.8rem;
     }
-    .custm_content_names > .MuiFormControl-root{
-        margin-right: 1rem !important;
+    .cart_bookAuthor {
+        font-size: 1rem;
     }
-    .MuiInputBase-fullWidth{ 
-        width:143% !important;
-        
+    .price {
+        font-size: 1rem;
     }
-    .btn_content{
-        margin-right: -8rem ;
+    .count_content {
+        margin: 2.5rem 0rem 0rem 3rem;
+        width: 100%;        
     }
-    .dtl_btn{
-        font-size: 15px;
-        margin-right: -15rem;
+    .count_content .remove {
+        margin-left: 25px;
+    }
+
+    .address_frame {
+        width: 79.5%;
+        height: 9vh;
+        margin-left: 4.8rem;
+        margin-top: 2rem;
+    }
+    .address_frame_details {
+        width: 73%;
+        height: 60vh;        
+        margin-top: 2.5rem;
+        margin-left: 5rem;
+    }
+    .order_frame {
+        width: 73.2%;
+        height: 35px;
+        margin: 2.5rem 0rem 4rem 4.8rem;   
+    }
+    .order_content {
+        width: 74%;
+        margin: 2.5rem 0rem 7rem 5rem;        
+    }
+    .img_book2 {
+        width: 12vw;
+    }
+    .main_cart2 > .text_content2 {
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (min-width: 630px) and (max-width:740px) {
+    .CartBag_frame {
+        margin-left: 0rem; 
+    }
+    .cartBag_head {
+        width: 80%;
+        min-height: 33vh;
+    }
+    .text_content {
+        margin-top: -0.5rem;
+    }
+    .bag_text {
+        height: 12vh;
+        width: 80%;
+    }
+    .img_book {
+        width: 10vw;
+        margin: 0rem 0rem 0rem 1.5rem;
+    }
+    .count_content {
+        margin: 1.5rem 0rem 0rem 3rem;
+        width: 100%;        
+    }
+    .count_content .remove {
+        margin-left: 25px;
+    }
+
+    .address_frame {
+        width: 80%;
+        height: 9vh;
+        margin-left: 4.4rem;
+        margin-top: 2rem;
+    }
+    .address_frame_details {
+        width: 73.5%;
+        margin-top: 2.5rem;
+        margin-left: 4.5rem;
+    }
+    .order_frame {
+        width: 73.7%;
+        height: 10px;
+        margin: 2rem 0rem 4rem 4.4rem;  
+    }
+    .order_content {
+        width: 74%;
+        margin: 2.5rem 0rem 7rem 4.5rem;        
+    }
+    .img_book2 {
+        width: 9vw;
+    }
+    .main_cart2 > .text_content2 {
+        margin-top: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+    .CartBag_frame {
+        margin-left: 0rem;      
+    }
+    .cartBag_head {
+        width: 80%;
+        min-height: 39vh;
+    }
+    .text_content {
+        margin-top: 0.3rem;
+    }
+    .bag_text {
+        height: 6vh;
+        margin-left: 1.8rem;        
+    }
+    .img_book {
+        width: 16vw;
+        margin: 0rem 0rem 0rem 1.5rem;
+    }
+    .count_content {
+        margin: 2.5rem 0rem 0rem 1.7rem;
+        width: 200%;        
+    }
+    .count_content .remove {
+        margin-left: 25px;
+    }
+
+    .address_frame {
+        width: 79.3%;
+        margin-left: 2.2rem;
+        margin-top: 2rem;
+    }
+    .address_frame_details {
+        width: 67%;
+        margin-left: 2.3rem;
+        margin-top: 2rem;
+    }
+    .custm_content_names, .address_feild, .city_state {
+        flex-flow: column;
+        width: 226px;
+    }
+    .MuiFormGroup-root.MuiFormGroup-row.css-qfz70r-MuiFormGroup-root {
+        width: 109%;
+    }
+    .order_frame {
+        width: 65.8%;
+        margin: 2rem 0rem 2.35rem 2.2rem;    
+    }
+    .order_content {
+        width: 68.4%;
+        margin: 2rem 0rem 7rem 2.3rem;
+    }
+    .img_book2 {
+        width: 16vw;
+        margin: 2rem 0rem 0rem 0rem;
+    }
+    .header_detail2 {
+        margin-left: 0rem;
+    }
+    .main_cart2 > .text_content2 {
+        margin-top: 2.3rem;        
     }
 }
 
 @media screen and (max-width: 340px){
-    .cartBag_content{
-        margin-left: -10rem;
-        border:none;
-        min-height: 51vh;
+    .CartBag_frame {
+        margin-left: 0rem;      
     }
-    .cartBag_content > .btn_content , .order_content > .btn_content, .address_frame> .btn_content{
-        margin-right: -7rem;
+    .cartBag_head {
+        width: 90%;
+        min-height: 39vh;
     }
-    .address_frame_details , .order_content{
-        margin-left: -1rem;
-        border:none;
-        height: 606px;
-    }       
-    .order_frame{
-        margin-left: -0.8rem;
-        border:none;
+    .head {
+        margin-left: 1.5rem;        
     }
-    .address_frame{
-        height: 11px !important;
-        margin-left: -1rem;
-        border:none;
+    .text_content {
+        margin-top: 1rem;
     }
-    .custm_content_names, .city_state{
-        display:block;
-        width: 303px;
-    }      
-    .MuiInputBase-fullWidth{      
-        width: 47% !important;        
+    .bag_text {
+        height: 6vh;
+        margin-left: 1.8rem;        
     }
-    .btn_content{
-        margin-right: -7rem ;
+    .img_book {
+        width: 16vw;
+        margin: 0rem 0rem 0rem 1.5rem;
     }
-    .dtl_btn{
-        font-size: 15px;
-        margin-right: -7rem;
+    .count_content {
+        margin: 2.5rem 0rem 0rem 1.7rem;
+        width: 200%;        
     }
-    .count_content > .remove{
-        margin-right: 1.5rem;
-        margin-left:18px;
+    .count_content .remove {
+        margin-left: 25px;
+    }
+
+    .address_frame {
+        width: 89.3%;
+        margin-left: 1rem;
+        margin-top: 2rem;
+    }
+    .address_frame_details {
+        width: 75%;
+        height: 125vh;
+        margin-left: 1rem;
+        margin-top: 2rem;
+    }
+    .custm_content_names, .address_feild, .city_state {
+        flex-flow: column;
+        width: 226px;
+    }
+    .MuiFormGroup-root.MuiFormGroup-row.css-qfz70r-MuiFormGroup-root {
+        width: 110%;
+    }
+    .order_frame {
+        width: 74.8%;
+        margin: 2rem 0rem 2.35rem 1rem;    
+        height: 20px;
+    }
+    .order_content {
+        width: 76.4%;
+        margin: 2rem 0rem 4rem 1rem;
+    }
+    .img_book2 {
+        width: 16vw;
+        margin: 2rem 0rem 0rem 0rem;
+    }
+    .header_detail2 {
+        margin-left: 0rem;
+    }
+    .main_cart2 > .text_content2 {
+        margin-top: 2.3rem;        
     }
 }

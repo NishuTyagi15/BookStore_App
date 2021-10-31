@@ -30,6 +30,10 @@ class UserServices {
         let response = obj.getMeth(`${baseurl}get_cart_items`, headerconfig);
         return response;
     }
+    customerDetails(data) {
+        let response = obj.putMeth(`${baseurl}edit_user`, data, headerconfig);
+        return response;
+    }
 }
 
 export default UserServices

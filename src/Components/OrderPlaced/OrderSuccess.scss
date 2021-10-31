@@ -28,12 +28,14 @@ $border: 1px solid lightgray;
 .success_text {
     font-size: large;
     font-family: ui-sans-serif;
+    text-align: center;
     width: 22%;
     display: flex;
     justify-content: center;
     margin-top: 1rem;
 }
 .info_table {
+    text-align: center;
     border: $border;
     margin-top: 3rem;
     th {

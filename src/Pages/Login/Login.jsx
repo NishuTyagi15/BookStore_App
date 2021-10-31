@@ -4,6 +4,7 @@ import '../SignUp/Signup.scss';
 import Button from '@material-ui/core/Button';
 import UserServices from '../../Services/UserService';
 import { Snackbar, IconButton } from '@mui/material';
+import { Redirect } from 'react-router-dom';
 
 const obj = new UserServices();
 
@@ -19,7 +20,8 @@ export default class Login extends Component {
             emailError: false,
             passError: false,
             snackbaropen: false, 
-            snackbarmsg: ""
+            snackbarmsg: "",
+            redirect: "",
         }
     }
 
@@ -52,9 +54,7 @@ export default class Login extends Component {
                 console.log(response);
                 localStorage.setItem("token", response.data.result.accessToken);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Successful!"})
-                var timer  = setTimeout(function() {
-                    window.location = '/home'
-                }, 2000);
+                this.setState({ redirect: "/home" });
             }).catch((error)=>{
                 console.log(error);
                 this.setState({snackbaropen:true, snackbarmsg: "Login Failed!"})
@@ -71,6 +71,9 @@ export default class Login extends Component {
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
         return (
             <div className="signup_main">
                 <form className="signup">
