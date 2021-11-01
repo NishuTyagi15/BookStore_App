@@ -164,7 +164,7 @@ export class Cart extends Component {
                             <div className="minus" onClick={this.decrease}>-</div>
                             <div className="count">{this.state.count}</div>
                             <div className="plus" onClick={this.increase }>+</div>
-                            <div className="remove" onClick={this.removeItem}>Remove</div>
+                            <div className="remove" onClick={this.removeItem(value._id)}>Remove</div>
                         </div>
                     </div>
                 </div>
