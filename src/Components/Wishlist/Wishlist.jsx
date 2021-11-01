@@ -39,6 +39,7 @@ export default class WishList extends Component {
         obj.getCartItem().then((response) => {
             console.log(response.data.result);
             this.setState({ books: response.data.result });
+            window.location.reload();
         }).catch(error => {
             console.log(error);
         })
@@ -75,18 +76,18 @@ export default class WishList extends Component {
 
         const wishDetails = this.state.books.map((value, index) => {
             return (
-                <div className="main_cart">
+                <div className="main_cart1">
                     <div>
-                        <img className="img_book" src={Book} alt="" />
+                        <img className="img_book1" src={Book} alt="" />
                     </div>
-                    <div className="text_content">
-                        <div className="bag_text">
-                            <div className="cart_title">{value.product_id.bookName}</div>
-                            <div className="cart_bookAuthor">by {value.product_id.author}</div>
-                            <div className="price">Rs.{value.product_id.price}</div>
+                    <div className="text_content1">
+                        <div className="bag_text1">
+                            <div className="cart_title1">{value.product_id.bookName}</div>
+                            <div className="cart_bookAuthor1">by {value.product_id.author}</div>
+                            <div className="price1">Rs.{value.product_id.price}</div>
                         </div>
                         <div className="delete_Button">
-                            <div className="delelte_content">
+                            <div className="delete_content">
                                 <div
                                     className="del_icon"
                                     onClick={() => this.deleteWish(value.product_id._id)}

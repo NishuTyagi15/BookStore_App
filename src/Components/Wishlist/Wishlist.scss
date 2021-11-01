@@ -27,7 +27,36 @@ $border: 1px solid #d9cccc;
     border: $border;
     background-color: #f5f5f5;
 }
-.delelte_content {
+.main_cart1 {
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem
+}
+.bag_text1 {
+    @include flex(flex, space-evenly, column, 130%, 14vh, null);
+    margin-left: 3rem;
+}
+.img_book1 {
+    width: 6vw;
+    margin: 0rem 0rem 0rem 2rem;
+}
+.text_content1 {
+    width: 28%;
+    margin-top: -0.7rem;
+}
+.cart_title1 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.cart_bookAuthor1 {
+    font-size: 0.8rem;
+    color: #a49595;
+    font-weight: 600;
+}
+.price1 {
+    font-weight: bold;
+}
+.delete_content {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -46,12 +75,85 @@ $border: 1px solid #d9cccc;
     font-size: 0.6rem !important;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .text_content1 {
+        margin-top: -1rem;
+    }
+    .bag_text1 {
+        height: 12vh;
+    }
+    .img_book1 {
+        width: 14vw;
+        margin: 0rem 0rem 0rem 1.5rem;
+    }
+    .delete_content {
+        margin-right: -18rem !important;
+    }
+}
+
 @media only screen and (min-width: 630px) and (max-width:750px) {
-    .delelte_content {
-        margin-right: -18rem;
+    .text_content1 {
+        margin-top: -0.5rem;
+    }
+    .bag_text1 {
+        height: 12vh;
+        width: 80%;
+    }
+    .img_book1 {
+        width: 10vw;
+        margin: 0rem 0rem 0rem 1.5rem;
+    }
+    .delete_content {
+        margin-right: -18rem !important;
     }
 }
 
 @media screen and (min-width: 360px) and (max-width: 630px){
+    .wish_content {
+        width: 95%;
+    }
+    .text_content1 {
+        margin-top: 1rem;
+    }
+    .bag_text1 {
+        height: 6vh;
+        margin-left: 1.8rem;        
+    }
+    .img_book1 {
+        width: 22vw;
+        margin: 0rem 0rem 0rem 1.5rem;
+    }
+    .delete_content {
+        margin-right: -7.5rem;
+    }
+    .btn_place4 {
+        width: 115%;
+        margin-left: 1.3rem !important;
+        margin-top: 3.5rem !important;
+    }
+}
 
+@media screen and (max-width: 340px){
+    .wish_content {
+        width: 95%;
+    }
+    .text_content1 {
+        margin-top: 1rem;
+    }
+    .bag_text1 {
+        height: 6vh;
+        margin-left: 1.8rem;        
+    }
+    .img_book1 {
+        width: 24vw;
+        margin: 0rem 0rem 0rem 1.5rem;
+    }
+    .delete_content {
+        margin-right: -7rem;
+    }
+    .btn_place4 {
+        width: 135%;
+        margin-left: 1.3rem !important;
+        margin-top: 3.8rem !important;
+    }
 }
