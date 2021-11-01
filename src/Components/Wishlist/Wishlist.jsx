@@ -59,10 +59,10 @@ export default class WishList extends Component {
         })
     }
 
-    deleteWish(e) {
-        console.log(e);
-        obj.removeWishItem(e).then((data) => {
-            console.log(data);
+    deleteWish(id) {
+        console.log(typeof(id));
+        obj.removeWishItem(id).then((response) => {
+            console.log(response);
             this.getWishlistItem();
         }).catch(error => {
             console.log(error);
@@ -113,8 +113,8 @@ export default class WishList extends Component {
                 <div className="wish_frame">
                     <div className="wish_content">
                         <div className="wishlist_heading">My Whislist({this.state.books.length}) </div>
-                        {wishDetails}
-                    </div  >
+                        <div className="cart_details">{wishDetails}</div>
+                    </div>
                 </div>
                 <Footer/>
             </div>
