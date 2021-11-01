@@ -36,10 +36,7 @@ export class Books extends Component {
         this.setState({
             openwish: true,
         })
-        let wish = {
-            isCart: true
-        }
-        obj.addToWishList(index._id, wish).then((response) => {
+        obj.addToWishList(index._id).then((response) => {
             console.log(response);
         }).catch(error => {
             console.log(error);

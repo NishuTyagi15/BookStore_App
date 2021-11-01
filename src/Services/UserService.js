@@ -42,16 +42,16 @@ class UserServices {
         let response = obj.deleteMeth(`${baseurl}remove_cart_item/${id}`, headerconfig);
         return response;
     }
-    addToWishList(id){
-        let response = obj.postMeth(`${baseurl}add_wish_list/${id}`, headerconfig);
+    addToWishList(id, data){
+        let response = obj.postMeth(`${baseurl}add_wish_list/${id}`, data, headerconfig);
         return response;
     }
     getWishlist() {
         let response = obj.getMeth(`${baseurl}get_wishlist_items`, headerconfig);
         return response;
     }
-    removeWishItem(data){
-        let response = obj.deleteMeth(`${baseurl}remove_wishlist_item/${data}`, headerconfig);
+    removeWishItem(id){
+        let response = obj.deleteMeth(`${baseurl}remove_wishlist_item/${id}`, headerconfig);
         return response;
     }
 }

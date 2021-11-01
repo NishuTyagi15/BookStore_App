@@ -15,10 +15,10 @@ $border: 1px solid #d9cccc;
 }
 .wish_content {
     width: 78%;
-    min-height: 223px;
+    min-height: 200px;
     border: $border;
     margin-top: 20px;
-    margin-bottom: 298px;
+    margin-bottom: 196px;
 }
 .wishlist_heading {
     @include flex(flex, center, column, null, 58px, null);
@@ -27,46 +27,31 @@ $border: 1px solid #d9cccc;
     border: $border;
     background-color: #f5f5f5;
 }
-.delete_Button {
-    display: flex;
-    flex-direction: column;
-    margin-top: -3rem;
-    margin-right: -38rem;
-}
 .delelte_content {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top: -3rem;
+    margin-right: -38rem;
 }
 .del_icon {
     cursor: pointer;
     color: grey;
 }
-.btn_place1 {
+.btn_place4 {
     background-color: #3371b5 !important;
     color: white !important;
-    margin-right: -1rem !important;
-    margin-top: 0.5rem !important;
+    margin-left: 2.3rem !important;
+    margin-top: 2.5rem !important;
     font-size: 0.6rem !important;
 }
 
-@media only screen and (min-width: 360px) {
-   
-    .Delete-add-Button{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media only screen and (min-width: 630px) and (max-width:750px) {
+    .delelte_content {
+        margin-right: -18rem;
     }
-    .btn-content1{
-        margin-top: 8px;
-    height: 26px;
-    width: 67px;
-    }
-    .cartBag-content1 {
-        width: 94%;
-    }
-    .bag-text1{
-        width: 132px;
-    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 630px){
+
 }

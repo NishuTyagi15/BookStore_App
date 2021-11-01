@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Wishlist.scss';
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import Button from '@material-ui/core/Button';
@@ -22,7 +22,7 @@ export default class WishList extends Component {
 
     componentDidMount() {
         this.getWishlistItem();
-        this.getCartItem();
+        this.getCartItems();
     }
 
     getWishlistItem = () => {
@@ -35,7 +35,7 @@ export default class WishList extends Component {
 
     }
 
-    getCartItem = () => {
+    getCartItems = () => {
         obj.getCartItem().then((response) => {
             console.log(response.data.result);
             this.setState({ books: response.data.result });
@@ -46,70 +46,74 @@ export default class WishList extends Component {
     }
 
     moveToCart = (value) => {
-        let Data = {
+        let wish = {
             isCart: true
         }
         console.log(value)
-        obj.addToCart(value, Data).then((response) => {
+        obj.addToCart(value, wish).then((response) => {
             console.log(response);
-            this.getCartItem();
+            this.getCartItems();
             this.deleteWish(value);
         }).catch(error => {
-            console.log("error", error);
+            console.log(error);
         })
     }
 
     deleteWish(e) {
-        console.log("id ", e);
-        obj.deleteWishlistItem(e).then((data) => {
+        console.log(e);
+        obj.removeWishItem(e).then((data) => {
             console.log(data);
             this.getWishlistItem();
         }).catch(error => {
-            console.log("error", error);
+            console.log(error);
         })
     }
 
 
     render() {
         console.log(this.state.books.length)
+
+        const wishDetails = this.state.books.map((value, index) => {
+            return (
+                <div className="main_cart">
+                    <div>
+                        <img className="img_book" src={Book} alt="" />
+                    </div>
+                    <div className="text_content">
+                        <div className="bag_text">
+                            <div className="cart_title">{value.product_id.bookName}</div>
+                            <div className="cart_bookAuthor">by {value.product_id.author}</div>
+                            <div className="price">Rs.{value.product_id.price}</div>
+                        </div>
+                        <div className="delete_Button">
+                            <div className="delelte_content">
+                                <div
+                                    className="del_icon"
+                                    onClick={() => this.deleteWish(value.product_id._id)}
+                                >
+                                    <DeleteForever />
+                                </div>
+                            </div>
+                            <div className="btn_content4">
+                                <Link to="/cart" style={{ textDecoration: 'none' }}>
+                                    <Button variant="contained" className="btn_place4" onClick={() => this.moveToCart(value.product_id._id)} >
+                                        Move to cart
+                                    </Button>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        })
+
         return (
             <div>
                 <Header val={this.state.books.length} />
                 <div className="wish_frame">
                     <div className="wish_content">
                         <div className="wishlist_heading">My Whislist({this.state.books.length}) </div>
-
-                        {this.state.books.map((value, index) =>
-                            <div className="main_cart">
-                                <div>
-                                    <img className="img_book" src={Book} alt="" />
-                                </div>
-                                <div className="text_content">
-                                    <div className="bag_text">
-                                        <div className="cart_title">{value.product_id.bookName}</div>
-                                        <div className="cart_bookAuthor">by {value.product_id.author}</div>
-                                        <div className="price">Rs.{value.product_id.price}</div>
-                                    </div>
-                                    <div className="delete_Button">
-                                        <div className="delelte_content">
-                                            <div 
-                                                className="del_icon" 
-                                                onClick={() => this.deleteWish(value.product_id._id)}
-                                            >
-                                                <DeleteForever />
-                                            </div>
-                                        </div>
-                                        <div className="btn_content1">
-                                            <Button variant="contained" className="btn_place1" onClick={() => this.moveToCart(value.product_id._id)} >
-                                                Move to cart
-                                            </Button>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        )}
+                        {wishDetails}
                     </div  >
                 </div>
                 <Footer/>
