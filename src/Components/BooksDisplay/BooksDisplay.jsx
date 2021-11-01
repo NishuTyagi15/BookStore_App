@@ -31,21 +31,21 @@ const BooksDisplay = (props) => {
     };
 
     const ascending = () => {
-        let sortData = bookarr.sort((a, b) => (a.price < b.price && 1) || -1);
+        let sortData = bookarr.sort((x, y) => (x.price > y.price && 1) || -1);
         console.log(sortData);
         setBooks(sortData);
         handleClose();
     };
 
     const descending = () => {
-        let sortData = bookarr.sort((a, b) => (a.price > b.price && 1) || -1);
+        let sortData = bookarr.sort((x, y) => (x.price < y.price && 1) || -1);
         console.log(sortData);
         setBooks(sortData);
         handleClose();
     };
 
     const newArrivals = () => {
-        let sortData = bookarr.sort((a, b) => (a.bookName > b.bookName && 1) || -1);
+        let sortData = bookarr.sort((x, y) => (x.bookName > y.bookName && 1) || -1);
         console.log(sortData);
         setBooks(sortData);
         handleClose();
@@ -86,13 +86,13 @@ const BooksDisplay = (props) => {
         }
         else {
             setSearchData(props.bookarr)
-            console.log("search data", setSearchData(filterBooks))
+            console.log(setSearchData(filterBooks))
         }
     }
 
     return (
         <div>
-            <div>
+            <div className="sortby">
                 <Button
                     className="sort"
                     id="demo-positioned-button"

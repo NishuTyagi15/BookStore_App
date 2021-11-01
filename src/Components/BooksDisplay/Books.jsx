@@ -55,7 +55,7 @@ export class Books extends Component {
                                 className="btn1" 
                                 variant="contained" 
                                 color="red" 
-                                style={{width:this.state.openadd?'17vw':'9vw'}}
+                                style={{width:this.state.openadd?'17vw':'9vw', backgroundColor:this.state.openadd?'#3371b5':'#A03037'}}
                                 onClick={() => {this.addToCart(this.props.index) }}>
                                 Add To Bag
                             </Button>
@@ -65,7 +65,7 @@ export class Books extends Component {
                                 className="btn2" 
                                 variant="contained" 
                                 color="red" 
-                                style={{width:this.state.openwish?'17vw':'7vw', marginLeft:this.state.openwish?'-8.7rem':''}}
+                                style={{width:this.state.openwish?'17vw':'7vw', marginLeft:this.state.openwish?'-8.7rem':'', backgroundColor:this.state.openwish?'#3371b5':'fff', color:this.state.openwish?'#fff':''}}
                                 onClick={() => {this.addToWish(this.props.index) }}>
                                 Wishlist
                             </Button>

@@ -24,7 +24,7 @@ class OrderSuccess extends Component {
                         <img className="image1" src={Success} alt="Success" />
                     </div>
                     <div className="success_text">
-                        hurray!!! your order is confirmed the order id is #123456 save the order id for further communication..
+                        hurray!!! your order is confirmed the order id is #755431 save the order id for further communication..
                     </div>
                     <div className="info_table">
                         <table>

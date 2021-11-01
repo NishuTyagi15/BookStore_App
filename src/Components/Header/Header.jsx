@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Header.scss';
 import education from '../../Assets/education.png';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,53 +9,52 @@ import ShoppingCartOutlined from '@material-ui/icons/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
 import { Link } from "react-router-dom";
 
-const searchBooks = (e) => {
-    this.props.search(e)
-}
 
-export class Header extends Component {
+function Header(props) {
 
-    render() {
-        return (
-            <>
-                <AppBar className="header_main" position="fixed">
-                    <Toolbar>
-                        <div className="header_title">
-                            <img src={education} alt="Book"></img>
-                            <div className="text">Bookstore</div>
-                        </div>
-                        <div className="search">
-                            <div className="searchIcon">
-                                <SearchIcon />
-                            </div>
-                            <InputBase
-                                placeholder="Search…"
-                                className="input"
-                                onChange={e => searchBooks(e)}
-                            />
-                        </div>
-                        <div className="side_header">
-                            <div className="cart_main">
-                                <span className="cart">Cart</span>
-                                <Badge badgeContent={this.props.value}
-                                    className="badge"
-                                    color="primary"
-                                    anchorOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'right',
-                                    }}
-                                >
-                                    <Link style={{ textDecoration: 'none', color: 'white' }} to={'/cart'}>
-                                        <ShoppingCartOutlined />
-                                    </Link>
-                                </Badge>
-                            </div>
-                        </div>
-                    </Toolbar>
-                </AppBar>
-            </>
-        )
+    const searchBooks = (e) => {
+        this.props.search(e)
     }
+
+    return (
+        <>
+            <AppBar className="header_main" position="fixed">
+                <Toolbar>
+                    <div className="header_title">
+                        <img src={education} alt="Book"></img>
+                        <div className="text">Bookstore</div>
+                    </div>
+                    <div className="search">
+                        <div className="searchIcon">
+                            <SearchIcon />
+                        </div>
+                        <InputBase
+                            placeholder="Search…"
+                            className="input"
+                            onChange={e => searchBooks(e)}
+                        />
+                    </div>
+                    <div className="side_header">
+                        <div className="cart_main">
+                            <span className="cart">Cart</span>
+                            <Badge badgeContent={props.value}
+                                className="badge"
+                                color="primary"
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                            >
+                                <Link style={{ textDecoration: 'none', color: 'white' }} to={'/cart'}>
+                                    <ShoppingCartOutlined />
+                                </Link>
+                            </Badge>
+                        </div>
+                    </div>
+                </Toolbar>
+            </AppBar>
+        </>
+    )
 }
 
 export default Header

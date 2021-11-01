@@ -24,6 +24,7 @@ export class Cart extends Component {
             book: [],
             open: false,
             openContent: false, 
+            count: "1",
             FullName : "",
             Number : "",
             PinCode : "",
@@ -41,8 +42,36 @@ export class Cart extends Component {
         }
     }
 
+    decrease = () => {
+        if (this.state.countervalue != 0) {
+          this.setState({count: this.state.count - 1});
+        }
+    };
+
+    increase = () => {
+        this.setState({count: this.state.count + 1});
+    };
+
     handleClick1 = () => {
         this.setState({ open: true });
+    }
+
+    isValidated = () => {
+        let isError = false;
+        const errors = this.state;
+        errors.nameError= this.state.FullName !=='' ? false : true;
+        errors.numberError= this.state.Number !=='' ? false : true;
+        errors.cityError= this.state.City !=='' ? false : true;
+        errors.pinError= this.state.PinCode !=='' ? false : true;
+        errors.addError= this.state.Address !=='' ? false : true;
+        errors.locError= this.state.Locality !=='' ? false : true;
+        errors.stateError= this.state.State !=='' ? false : true;
+      
+        this.setState({
+            ...errors
+        })
+
+        return isError =errors.nameError || errors.numberError || errors.pinError || errors.addError || errors.locError || errors.stateError || errors.cityError 
     }
 
     handleClick2 = () => {
@@ -91,30 +120,24 @@ export class Cart extends Component {
         let data = {
             orders: orderDetails,
         };
-        console.log("ORDER SUCCES DATA", data);       
+        console.log(data);       
         obj.orderItem(data).then((response) => {           
-            console.log(response);   
+            console.log(response); 
         }).catch((error) => {
             console.log(error);
-        })   
+        })  
+        this.state.book.map((value) => {
+            this.removeCartItem(value._id);
+        })  
     }
 
-    isValidated = () => {
-        let isError = false;
-        const errors = this.state;
-        errors.nameError= this.state.FullName !=='' ? false : true;
-        errors.numberError= this.state.Number !=='' ? false : true;
-        errors.cityError= this.state.City !=='' ? false : true;
-        errors.pinError= this.state.PinCode !=='' ? false : true;
-        errors.addError= this.state.Address !=='' ? false : true;
-        errors.locError= this.state.Locality !=='' ? false : true;
-        errors.stateError= this.state.State !=='' ? false : true;
-      
-        this.setState({
-            ...errors
+    removeCartItem = (id) => {
+        console.log(typeof(id));
+        obj.removeItem(id).then((response) => {
+            console.log(response);
+        }).catch((error) => {
+            console.log(error);
         })
-
-        return isError =errors.nameError || errors.numberError || errors.pinError || errors.addError || errors.locError || errors.stateError || errors.cityError 
     }
 
     change = (e) => {
@@ -138,10 +161,10 @@ export class Cart extends Component {
                             <div className="price">Rs. {value.product_id.price}</div>
                         </div>
                         <div className="count_content">
-                            <div className="minus">-</div>
-                            <div className="count">1</div>
-                            <div className="plus">+</div>
-                            <div className="remove">Remove</div>
+                            <div className="minus" onClick={this.decrease}>-</div>
+                            <div className="count">{this.state.count}</div>
+                            <div className="plus" onClick={this.increase }>+</div>
+                            <div className="remove" onClick={this.removeCartItem}>Remove</div>
                         </div>
                     </div>
                 </div>
@@ -167,7 +190,7 @@ export class Cart extends Component {
 
         return (
             <div>
-                <Header />
+                <Header value={this.state.book.length}/>
                 <div className="CartBag_frame">
                     <div className="cartBag_head">
                         <div className="head">My Cart ({this.state.book.length})</div>

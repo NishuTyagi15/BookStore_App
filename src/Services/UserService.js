@@ -38,6 +38,10 @@ class UserServices {
         let response = obj.postMeth(`${baseurl}add/order`, data, headerconfig);
         return response;
     }
+    removeItem(id){
+        let response = obj.deleteMeth(`${baseurl}remove_cart_item/${id}`, headerconfig);
+        return response;
+    }
 }
 
 export default UserServices
