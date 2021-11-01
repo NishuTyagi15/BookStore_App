@@ -6,6 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import UserServices from '../../Services/UserService';
+import { Link } from 'react-router-dom';
 
 const obj = new UserServices();
 
@@ -31,9 +32,17 @@ export class Books extends Component {
         })
     }
 
-    addToWish = () => {
+    addToWish = (index) => {
         this.setState({
             openwish: true,
+        })
+        let wish = {
+            isCart: true
+        }
+        obj.addToWishList(index._id, wish).then((response) => {
+            console.log(response);
+        }).catch(error => {
+            console.log(error);
         })
     }
 
@@ -61,6 +70,7 @@ export class Books extends Component {
                             </Button>
                         </div>
                         <div className="wish">
+                            <Link style={{textDecoration:'none'}} to="/wishlist">
                             <Button 
                                 className="btn2" 
                                 variant="contained" 
@@ -69,6 +79,7 @@ export class Books extends Component {
                                 onClick={() => {this.addToWish(this.props.index) }}>
                                 Wishlist
                             </Button>
+                            </Link>
                         </div>
                     </div>
                 </Card>

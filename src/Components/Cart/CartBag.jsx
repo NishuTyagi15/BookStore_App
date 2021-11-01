@@ -127,13 +127,13 @@ export class Cart extends Component {
             console.log(error);
         })  
         this.state.book.map((value) => {
-            this.removeCartItem(value._id);
+            this.removeItem(value._id);
         })  
     }
 
-    removeCartItem = (id) => {
+    removeItem = (id) => {
         console.log(typeof(id));
-        obj.removeItem(id).then((response) => {
+        obj.removeCartItem(id).then((response) => {
             console.log(response);
         }).catch((error) => {
             console.log(error);
@@ -164,7 +164,7 @@ export class Cart extends Component {
                             <div className="minus" onClick={this.decrease}>-</div>
                             <div className="count">{this.state.count}</div>
                             <div className="plus" onClick={this.increase }>+</div>
-                            <div className="remove" onClick={this.removeCartItem}>Remove</div>
+                            <div className="remove" onClick={this.removeItem}>Remove</div>
                         </div>
                     </div>
                 </div>

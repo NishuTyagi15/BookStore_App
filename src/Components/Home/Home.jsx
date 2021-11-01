@@ -11,7 +11,7 @@ export class Home extends Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header val={this.props.value}/>
                 <BooksDisplay />
                 <Footer/>
             </div>
