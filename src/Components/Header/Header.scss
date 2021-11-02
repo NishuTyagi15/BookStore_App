@@ -23,7 +23,7 @@ $color: grey;
     border-radius: 5px;
     background-color: #fff;
     margin-right: 2px;
-    margin-left: 3rem;
+    margin-left: -8rem;
     width: 40%;
     height: 6vh;
 }
@@ -44,14 +44,18 @@ $color: grey;
 .side_header{
     @include icon(flex,null,space-around);
     width: 200px;
-    margin-left: 16.5rem;
+    margin-right: 4rem;
 }
 .cart_main{
-    @include icon(flex,row,null);
+    @include icon(flex,row,center);
+    align-items: center;
     opacity: 0.8;
 }
 .cart {
     margin-right: 0.8rem;
+}
+.css-1c32n2y-MuiBadge-root {
+    top: 0.2rem;
 }
 .css-106c1u2-MuiBadge-badge {
     background-color: transparent !important;
@@ -60,7 +64,50 @@ $color: grey;
     height: 18px !important;
     font-size: 0.6rem !important;
 }
-
+.pop {
+    z-index: 10000;
+    top: 1.5rem !important;
+    left: -5rem !important;
+}
+.paper {
+    @include icon(flex,column,null);
+    border-radius: 3px;
+    max-width: 130px;
+    min-height: 14vh;
+    flex-flow: wrap;
+    background-color: white;
+    border: 1px solid grey;
+}
+.popContent {
+    width: 100px;
+    cursor: pointer;
+    padding: 7px;
+}
+.MuiToolbar-root {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile{
+    @include icon(flex,column,null)
+}
+.profile_icon{
+    @include icon(flex,null,center)
+}
+.name {
+    font-weight: 600;
+}
+.logout{
+ @include icon(flex,row,center)   
+}
+button.logout_btn {     
+    background-color: transparent;     
+    border: 1px  solid indianred;     
+    color: indianred;     
+    width: 90%;     
+    height: 4.5vh ;    
+}
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .search {
@@ -110,13 +157,20 @@ $color: grey;
         margin-left: 3.5rem;        
     }
     .searchIcon {
-        margin-left: 4rem;        
+        margin-left: 8rem;        
     }
     .side_header {
         margin-left: 6rem;        
     }
     .text {
         margin-left: 0.4rem;        
+    }
+    .side_header {
+        margin-right: 0rem;
+        width: 130px;
+    }
+    .cart {
+        margin-right: 0rem;
     }
 }
 
@@ -129,12 +183,19 @@ $color: grey;
         margin-left: 3rem;        
     }
     .searchIcon {
-        margin-left: 2rem;        
+        margin-left: 7rem;        
     }
     .side_header {
         margin-left: 5rem;        
     }
     .text {
         margin-left: 0.4rem;        
+    }
+    .side_header {
+        margin-right: 0rem;
+        width: 130px;
+    }
+    .cart {
+        margin-right: 0rem;
     }
 }

@@ -67,7 +67,6 @@ export class Books extends Component {
                             </Button>
                         </div>
                         <div className="wish">
-                            <Link style={{textDecoration:'none'}} to="/wishlist">
                             <Button 
                                 className="btn2" 
                                 variant="contained" 
@@ -76,7 +75,6 @@ export class Books extends Component {
                                 onClick={() => {this.addToWish(this.props.index) }}>
                                 Wishlist
                             </Button>
-                            </Link>
                         </div>
                     </div>
                 </Card>

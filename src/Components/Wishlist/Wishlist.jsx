@@ -39,7 +39,6 @@ export default class WishList extends Component {
         obj.getCartItem().then((response) => {
             console.log(response.data.result);
             this.setState({ books: response.data.result });
-            window.location.reload();
         }).catch(error => {
             console.log(error);
         })
@@ -73,7 +72,6 @@ export default class WishList extends Component {
 
     render() {
         console.log(this.state.books.length)
-
         const wishDetails = this.state.books.map((value, index) => {
             return (
                 <div className="main_cart1">
@@ -110,7 +108,7 @@ export default class WishList extends Component {
 
         return (
             <div>
-                <Header val={this.state.books.length} />
+                <Header value={this.state.books.length} />
                 <div className="wish_frame">
                     <div className="wish_content">
                         <div className="wishlist_heading">My Whislist({this.state.books.length}) </div>
