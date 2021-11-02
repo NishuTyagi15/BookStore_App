@@ -24,7 +24,6 @@ export class Cart extends Component {
             book: [],
             open: false,
             openContent: false, 
-            count: "1",
             FullName : "",
             Number : "",
             PinCode : "",
@@ -42,15 +41,34 @@ export class Cart extends Component {
         }
     }
 
-    decrease = () => {
-        if (this.state.countervalue != 0) {
-          this.setState({count: this.state.count - 1});
+    decrease = (productid, quantity) => {
+        let data = {
+            "quantityToBuy": quantity - 1
         }
-    };
+        if(data.quantityToBuy >= 1){
+            obj.cartItemQuantity(data, productid).then((response) => {
+                console.log(response);
+                this.getCartItem();
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
+        else{
+            console.log("Out of Stock!")
+        }      
+    }
 
-    increase = () => {
-        this.setState({count: this.state.count + 1});
-    };
+    increase = (productid, quantity) => {
+        let data = {
+            "quantityToBuy": quantity + 1
+        }
+        obj.cartItemQuantity(data, productid).then((response) => {
+            this.getCartItem();
+            console.log(response);
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
 
     handleClick1 = () => {
         this.setState({ open: true });
@@ -135,6 +153,7 @@ export class Cart extends Component {
         console.log(typeof(id));
         obj.removeCartItem(id).then((response) => {
             console.log(response);
+            this.getCartItem();
         }).catch((error) => {
             console.log(error);
         })
@@ -161,10 +180,10 @@ export class Cart extends Component {
                             <div className="price">Rs. {value.product_id.price}</div>
                         </div>
                         <div className="count_content">
-                            <div className="minus" onClick={this.decrease}>-</div>
-                            <div className="count">{this.state.count}</div>
-                            <div className="plus" onClick={this.increase }>+</div>
-                            <div className="remove" onClick={this.removeItem(value._id)}>Remove</div>
+                            <div className="minus" onClick={()=>this.decrease(value._id, value.quantityToBuy)}>-</div>
+                            <div className="count">{value.quantityToBuy}</div>
+                            <div className="plus" onClick={()=>this.increase(value._id, value.quantityToBuy)}>+</div>
+                            <div className="remove" onClick={() => this.removeItem(value._id)}>Remove</div>
                         </div>
                     </div>
                 </div>

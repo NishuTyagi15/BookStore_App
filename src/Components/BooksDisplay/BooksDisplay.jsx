@@ -44,7 +44,7 @@ const BooksDisplay = (props) => {
         handleClose();
     };
 
-    const newArrivals = () => {
+    const AtoZ = () => {
         let sortData = bookarr.sort((x, y) => (x.bookName > y.bookName && 1) || -1);
         console.log(sortData);
         setBooks(sortData);
@@ -121,7 +121,7 @@ const BooksDisplay = (props) => {
                 >
                     <MenuItem value ="asec" onClick={ascending}>Price : Low to High</MenuItem>
                     <MenuItem value="dsec" onClick={descending}>Price : High to Low</MenuItem>
-                    <MenuItem value="new_arri" onClick={newArrivals}>Newest Arrivals</MenuItem>
+                    <MenuItem value="new_arri" onClick={AtoZ}>Sort By: (A-Z)</MenuItem>
                 </Menu>
             </div>
             <div className="book_header">

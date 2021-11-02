@@ -54,6 +54,10 @@ class UserServices {
         let response = obj.deleteMeth(`${baseurl}remove_wishlist_item/${id}`, headerconfig);
         return response;
     }
+    cartItemQuantity = (data, id) => {
+        let response = obj.putMeth(`${baseurl}cart_item_quantity/${id}`, data, headerconfig);
+        return response;
+    }
 }
 
 export default UserServices
