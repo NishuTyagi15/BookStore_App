@@ -37,7 +37,8 @@ export class Cart extends Component {
             locError:false,
             addError:false,
             cityError:false,
-            stateError:false,         
+            stateError:false, 
+            cartCount: [],        
         }
     }
 
@@ -121,6 +122,10 @@ export class Cart extends Component {
         }).catch(error => {
             console.log(error);
         })
+    }
+
+    sendCount = (count) => {
+        this.setState({ cartCount: count });
     }
 
     orderPlaced = () => {
@@ -209,7 +214,7 @@ export class Cart extends Component {
 
         return (
             <div>
-                <Header value={this.state.book.length}/>
+                <Header val={this.state.book.length}/>
                 <div className="CartBag_frame">
                     <div className="cartBag_head">
                         <div className="head">My Cart ({this.state.book.length})</div>

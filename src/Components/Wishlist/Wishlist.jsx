@@ -16,6 +16,7 @@ export default class WishList extends Component {
         super(props);
         this.state = {
             books: [],
+            wishes: [],
         }
 
     }
@@ -28,7 +29,7 @@ export default class WishList extends Component {
     getWishlistItem = () => {
         obj.getWishlist().then((response) => {
             console.log(response.data.result);
-            this.setState({ books: response.data.result });
+            this.setState({ wishes: response.data.result });
         }).catch(error => {
             console.log(error);
         })
@@ -71,8 +72,8 @@ export default class WishList extends Component {
 
 
     render() {
-        console.log(this.state.books.length)
-        const wishDetails = this.state.books.map((value, index) => {
+        console.log(this.state.wishes.length)
+        const wishDetails = this.state.wishes.map((value, index) => {
             return (
                 <div className="main_cart1">
                     <div>
@@ -106,10 +107,10 @@ export default class WishList extends Component {
 
         return (
             <div>
-                <Header value={this.state.books.length} />
+                <Header val={this.state.books.length} />
                 <div className="wish_frame">
                     <div className="wish_content">
-                        <div className="wishlist_heading">My Whislist({this.state.books.length}) </div>
+                        <div className="wishlist_heading">My Whislist({this.state.wishes.length}) </div>
                         <div className="cart_details">{wishDetails}</div>
                     </div>
                 </div>

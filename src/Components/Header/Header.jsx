@@ -22,7 +22,7 @@ function Header(props) {
     };
 
     const searchBooks = (e) => {
-        this.props.search(e)
+        props.search(e)
     }
 
     return (
@@ -69,7 +69,7 @@ function Header(props) {
                         </div>
                         <div className="cart_main">
                             <span className="cart">Cart</span>
-                            <Badge badgeContent={props.value}
+                            <Badge badgeContent={props.val}
                                 className="badge"
                                 color="primary"
                                 anchorOrigin={{
