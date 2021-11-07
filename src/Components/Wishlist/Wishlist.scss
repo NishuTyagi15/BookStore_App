@@ -70,8 +70,7 @@ $border: 1px solid #d9cccc;
 .btn_place4 {
     background-color: #3371b5 !important;
     color: white !important;
-    margin-left: 2.3rem !important;
-    margin-top: 2.5rem !important;
+    margin-right: 1.3rem !important;
     font-size: 0.6rem !important;
 }
 
@@ -124,12 +123,12 @@ $border: 1px solid #d9cccc;
         margin: 0rem 0rem 0rem 1.5rem;
     }
     .delete_content {
-        margin-right: -7.5rem;
+        margin-right: -9.5rem;
+        margin-top: -1.8rem;
     }
     .btn_place4 {
-        width: 115%;
-        margin-left: 1.3rem !important;
-        margin-top: 3.5rem !important;
+        width: 84%;
+        font-size: 0.5rem !important;
     }
 }
 
@@ -149,11 +148,12 @@ $border: 1px solid #d9cccc;
         margin: 0rem 0rem 0rem 1.5rem;
     }
     .delete_content {
-        margin-right: -7rem;
+        margin-left: 10rem;
+        flex-direction: column-reverse;
     }
     .btn_place4 {
-        width: 135%;
-        margin-left: 1.3rem !important;
-        margin-top: 3.8rem !important;
+        width: 17%;
+        font-size: 0.4rem !important;
+        margin-left: -3.2rem !important;
     }
 }

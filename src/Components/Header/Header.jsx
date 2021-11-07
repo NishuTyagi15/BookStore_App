@@ -48,7 +48,7 @@ function Header(props) {
                     <div className="side_header">
                         <div className="profile">
                             <div className="profile_icon"> <PersonOutlineIcon onClick={handleProfile} /></div>
-                            <span className="profile_text">Profile</span>
+                            <span className="profile_text">{localStorage.getItem('firstname')}</span>
                             <Popper className="pop" open={open} anchorEl={anchorEl} placement={'bottom-start'} transition>
                                 <div className="paper">
                                     <div className="popContent name">Hello {localStorage.getItem('firstname')}</div>

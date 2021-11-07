@@ -86,19 +86,17 @@ export default class WishList extends Component {
                         </div>
                         <div className="delete_Button">
                             <div className="delete_content">
+                                <Link to="/cart" style={{ textDecoration: 'none' }}>
+                                    <Button variant="contained" className="btn_place4" onClick={() => this.moveToCart(value.product_id._id)} >
+                                        Move to cart
+                                    </Button>
+                                </Link>
                                 <div
                                     className="del_icon"
                                     onClick={() => this.deleteWish(value.product_id._id)}
                                 >
                                     <DeleteForever />
                                 </div>
-                            </div>
-                            <div className="btn_content4">
-                                <Link to="/cart" style={{ textDecoration: 'none' }}>
-                                    <Button variant="contained" className="btn_place4" onClick={() => this.moveToCart(value.product_id._id)} >
-                                        Move to cart
-                                    </Button>
-                                </Link>
                             </div>
                         </div>
                     </div>
