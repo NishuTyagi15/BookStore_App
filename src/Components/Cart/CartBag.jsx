@@ -38,7 +38,6 @@ export class Cart extends Component {
             addError:false,
             cityError:false,
             stateError:false, 
-            cartCount: [],        
         }
     }
 
@@ -122,10 +121,6 @@ export class Cart extends Component {
         }).catch(error => {
             console.log(error);
         })
-    }
-
-    sendCount = (count) => {
-        this.setState({ cartCount: count });
     }
 
     orderPlaced = () => {
